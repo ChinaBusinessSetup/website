@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Tax Return Filing in China | ChinaBusinessSetup</title>
+  <meta name="description" content="Corporate income tax filing and annual reconciliation support for foreign-owned companies in China." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0c1f3f;
+      --deep: #092762;
+      --blue: #176fd1;
+      --sky: #3ab4e8;
+      --cyan: #19a7c8;
+      --mint: #0b9f8f;
+      --amber: #d9972a;
+      --paper: #ffffff;
+      --soft: #f4f8fc;
+      --mist: #e6eef7;
+      --line: #d8e2ee;
+      --muted: #53657d;
+      --shadow: 0 22px 60px rgba(9, 39, 98, .14);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .top-strip {
+      background: #071c39;
+      color: #d8e9ff;
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+    .top-strip .wrap {
+      max-width: 1460px;
+      margin: 0 auto;
+      min-height: 38px;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .top-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #fff;
+      font-weight: 600;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid rgba(216, 226, 238, .95);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 32px rgba(9, 39, 98, .06);
+    }
+    .nav-shell {
+      position: relative;
+      max-width: 1460px;
+      min-height: 88px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      width: clamp(250px, 22vw, 360px);
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      min-width: 230px;
+    }
+    .brand img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .menu-toggle {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .mobile-menu {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .mobile-menu svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+    }
+    .nav {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 2px;
+      min-height: 88px;
+      color: #17345f;
+      white-space: nowrap;
+      flex: 1 1 auto;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+    }
+    .nav-top {
+      min-height: 88px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 13px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #23395e;
+    }
+    .nav-top:hover,
+    .nav-item:focus-within .nav-top,
+    .nav-item:hover .nav-top {
+      color: var(--blue);
+    }
+    .caret {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid currentColor;
+      margin-top: 3px;
+    }
+    .nav-item:hover .caret,
+    .nav-item:focus-within .caret {
+      transform: rotate(180deg);
+    }
+    .mega {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 88px;
+      display: none;
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(9, 39, 98, .14);
+      z-index: 20;
+    }
+    .nav-item:hover .mega,
+    .nav-item:focus-within .mega {
+      display: grid;
+    }
+    .nav-item.mega-click-closing .mega {
+      display: none !important;
+    }
+    .mega-col {
+      min-height: 300px;
+      padding: 32px 36px;
+      border-right: 1px solid #e8eef5;
+    }
+    .mega-col:last-child {
+      border-right: 0;
+    }
+    .mega-title {
+      margin: 0 0 18px;
+      color: #2b3d62;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .mega-rule {
+      height: 2px;
+      width: 100%;
+      background: #2f4f79;
+      margin: 0 0 20px;
+    }
+    .mega-links {
+      display: grid;
+      gap: 0;
+    }
+    .mega-links a {
+      display: block;
+      padding: 11px 6px;
+      border-radius: 6px;
+      color: #2b3d62;
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+    .mega-links a:hover {
+      color: var(--blue);
+      background: #f4f8fc;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+    .icon-link {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      background: #fff;
+    }
+    .icon-link svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+    }
+    .primary-link,
+    .secondary-link {
+      min-height: 44px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+    .primary-link {
+      background: #176fd1;
+      color: #fff;
+      box-shadow: 0 14px 26px rgba(23, 111, 209, .22);
+    }
+    .secondary-link {
+      background: #fff;
+      color: var(--blue);
+      border-color: rgba(23, 111, 209, .28);
+    }
+    .whatsapp-link {
+      min-height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      background: #18b760;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 14px 26px rgba(24, 183, 96, .22);
+    }
+    .whatsapp-link svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+    }
+    .whatsapp-link:hover,
+    .whatsapp-float:hover {
+      background: #128c4e;
+    }
+    .hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      background: #071c39;
+      color: #fff;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(7, 28, 57, .96) 0%, rgba(7, 28, 57, .84) 34%, rgba(7, 28, 57, .36) 62%, rgba(7, 28, 57, .10) 100%),
+        linear-gradient(0deg, rgba(7, 28, 57, .68), rgba(7, 28, 57, .04) 46%),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      transform: scale(1.01);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 110px 24px 150px;
+      display: grid;
+      grid-template-columns: minmax(0, 620px) minmax(300px, 1fr);
+      gap: 64px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .08);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e7f4ff;
+      backdrop-filter: blur(12px);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #36d399;
+      box-shadow: 0 0 0 5px rgba(54, 211, 153, .12);
+    }
+    h1 {
+      margin: 24px 0 22px;
+      max-width: 650px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      color: #fff;
+    }
+    .hero-lead {
+      max-width: 590px;
+      margin: 0 0 34px;
+      color: #dbeaff;
+      font-size: 19px;
+      line-height: 1.72;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .hero-actions .primary-link,
+    .hero-actions .secondary-link {
+      min-height: 52px;
+      padding: 15px 22px;
+    }
+    .hero-actions .secondary-link {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .36);
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(12px);
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+    }
+    .trust-item {
+      min-height: 88px;
+      padding: 17px 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .18);
+      backdrop-filter: blur(12px);
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .trust-item span {
+      display: block;
+      font-size: 12px;
+      color: #d5e7fb;
+      line-height: 1.45;
+    }
+    .quick-panel {
+      justify-self: end;
+      width: min(100%, 380px);
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .94);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .72);
+    }
+    .quick-panel h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      color: var(--deep);
+    }
+    .quick-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .quick-list {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+    }
+    .quick-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #213b63;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+    .check {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(11, 159, 143, .12);
+      color: var(--mint);
+    }
+    .check svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      stroke-width: 3;
+    }
+    section {
+      padding: 78px 24px;
+    }
+    .section-soft { background: var(--soft); }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+    .section-kicker {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-heading h2,
+    .inner-hero h1,
+    .split-copy h2,
+    .lead-copy h2 {
+      letter-spacing: 0;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      color: var(--deep);
+    }
+    .section-heading p {
+      margin: 16px auto 0;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+    .section-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .service-card,
+    .entity-card,
+    .faq,
+    .page-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(9, 39, 98, .06);
+    }
+    .service-card {
+      padding: 28px;
+      min-height: 270px;
+    }
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: #eaf4ff;
+      color: var(--blue);
+    }
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    .service-card h3,
+    .entity-card h3,
+    .faq h3,
+    .page-card h3 {
+      margin: 0 0 12px;
+      color: var(--deep);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .service-card p,
+    .entity-card p,
+    .faq p,
+    .page-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      color: #24415f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .link-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .link-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+    .framework,
+    .city-content,
+    .insight-grid,
+    .lead-wrap,
+    .inner-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: stretch;
+    }
+    .framework-copy,
+    .split-copy {
+      padding: 38px;
+      border-radius: var(--radius);
+      background: #071c39;
+      color: #fff;
+      min-height: 100%;
+    }
+    .framework-copy h2,
+    .split-copy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.13;
+      color: #fff;
+    }
+    .framework-copy p,
+    .split-copy p {
+      margin: 0 0 26px;
+      color: #d6e6fa;
+      line-height: 1.75;
+    }
+    .entity-grid,
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .entity-card,
+    .page-card {
+      padding: 22px;
+    }
+    .city-band {
+      position: relative;
+      overflow: hidden;
+      background: #102b52;
+      color: #fff;
+    }
+    .city-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 43, 82, .96), rgba(16, 43, 82, .82), rgba(16, 43, 82, .96)),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      opacity: .32;
+    }
+    .city-content {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: center;
+    }
+    .city-content h2 {
+      margin: 0 0 16px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.14;
+      color: #fff;
+    }
+    .city-content p {
+      margin: 0;
+      color: #d6e6fa;
+      line-height: 1.75;
+    }
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .city {
+      min-height: 88px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .09);
+      backdrop-filter: blur(10px);
+    }
+    .city strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #fff;
+      font-size: 16px;
+    }
+    .city span {
+      color: #d9e8fa;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      min-height: 210px;
+      padding: 24px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--deep);
+      line-height: 1.28;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .metric-panel {
+      border-radius: var(--radius);
+      padding: 34px;
+      color: #fff;
+      background: linear-gradient(135deg, #176fd1, #0b9f8f);
+    }
+    .metric-panel h2 {
+      margin: 0 0 26px;
+      font-size: 31px;
+      line-height: 1.18;
+      color: #fff;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .metric {
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(255, 255, 255, .12);
+    }
+    .metric strong {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 4px;
+    }
+    .metric span {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #e8f5ff;
+    }
+    .faq-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .faq {
+      padding: 22px 24px;
+      box-shadow: none;
+    }
+    .lead-section {
+      background: #071c39;
+      color: #fff;
+      padding-bottom: 0;
+    }
+    .lead-wrap {
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: start;
+    }
+    .lead-copy {
+      padding: 16px 0 60px;
+    }
+    .lead-copy h2 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.11;
+    }
+    .lead-copy p {
+      margin: 0 0 28px;
+      color: #d9e8fa;
+      line-height: 1.75;
+    }
+    .contact-stack {
+      display: grid;
+      gap: 12px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .contact-item .service-icon {
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      background: rgba(255, 255, 255, .1);
+      color: #62dcf1;
+    }
+    .lead-form {
+      margin-bottom: -64px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .6);
+    }
+    .lead-form h3 {
+      margin: 0 0 16px;
+      color: var(--deep);
+      font-size: 24px;
+    }
+    .field-label {
+      color: var(--deep);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 4px 0 -4px;
+    }
+    .whatsapp-fields {
+      display: grid;
+      grid-template-columns: minmax(190px, .95fr) minmax(190px, 1.05fr);
+      gap: 13px;
+    }
+    .form-note {
+      margin: -4px 0 2px;
+      color: #66788d;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #cdd9e8;
+      border-radius: 6px;
+      padding: 13px 14px;
+      font: inherit;
+      color: #163154;
+      background: #fff;
+      outline: none;
+    }
+    textarea {
+      min-height: 104px;
+      resize: vertical;
+    }
+    .full { grid-column: 1 / -1; }
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .consent input {
+      min-height: auto;
+      width: auto;
+      margin-top: 3px;
+    }
+    .submit {
+      min-height: 52px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--blue);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .inner-hero {
+      position: relative;
+      overflow: hidden;
+      background: #071c39;
+      color: #fff;
+      padding: 88px 24px 92px;
+    }
+    .inner-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7, 28, 57, .97), rgba(7, 28, 57, .78), rgba(7, 28, 57, .48)),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      opacity: .95;
+    }
+    .inner-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      margin-bottom: 18px;
+      color: #d5e7fb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumb a {
+      color: #fff;
+    }
+    .inner-hero h1 {
+      margin: 0 0 18px;
+      max-width: 760px;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.07;
+      color: #fff;
+    }
+    .inner-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: #dbeaff;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+    .page-list {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+    .page-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: #223a61;
+      background: #fff;
+      font-weight: 800;
+    }
+    .page-list a:hover {
+      color: var(--blue);
+      border-color: rgba(23, 111, 209, .34);
+    }
+    .footer {
+      padding: 112px 24px 34px;
+      background: #f6f9fd;
+      color: #40546e;
+    }
+    .footer-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 34px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 34px;
+    }
+    .footer-logo {
+      max-width: 320px;
+      margin-bottom: 18px;
+    }
+    .footer p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .footer h3 {
+      margin: 0 0 15px;
+      color: var(--deep);
+      font-size: 16px;
+    }
+    .footer a,
+    .footer span {
+      display: block;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #40546e;
+    }
+    .copyright {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #66788d;
+    }
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 120;
+      min-height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 18px;
+      background: #18b760;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .2);
+    }
+    .whatsapp-float svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
+    @media (max-width: 1280px) {
+      .brand { width: clamp(230px, 20vw, 310px); }
+      .nav-top { padding: 0 9px; font-size: 14px; }
+      .header-actions .secondary-link { display: none; }
+    }
+    @media (max-width: 1080px) {
+      .nav-shell {
+        min-height: 78px;
+      }
+      .brand {
+        width: min(62vw, 320px);
+      }
+      .mobile-menu {
+        display: inline-flex;
+      }
+      .header-actions .icon-link,
+      .header-actions .secondary-link {
+        display: none;
+      }
+      .nav {
+        display: none;
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 78px;
+        min-height: auto;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        white-space: normal;
+      }
+      .menu-toggle:checked ~ .nav {
+        display: flex;
+      }
+      .nav-item {
+        display: block;
+        border-bottom: 1px solid #edf2f7;
+      }
+      .nav-item:last-child {
+        border-bottom: 0;
+      }
+      .nav-top {
+        width: 100%;
+        min-height: 46px;
+        justify-content: space-between;
+        padding: 12px;
+      }
+      .mega {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 0;
+        box-shadow: none;
+        background: #f8fbff;
+      }
+      .mega-col {
+        min-height: auto;
+        padding: 18px 14px;
+        border-right: 0;
+        border-top: 1px solid #e8eef5;
+      }
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 920px) {
+      .top-strip .wrap { justify-content: center; }
+      .hero { min-height: auto; }
+      .hero-media {
+        background-image:
+          linear-gradient(180deg, rgba(7, 28, 57, .92) 0%, rgba(7, 28, 57, .82) 46%, rgba(7, 28, 57, .58) 100%),
+          url("../assets/shenzhen-spring-bamboo-hero.png");
+        background-position: center;
+      }
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: 84px 24px 72px;
+      }
+      .quick-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+      .service-grid,
+      .framework,
+      .city-content,
+      .insight-grid,
+      .lead-wrap,
+      .footer-grid,
+      .inner-grid {
+        grid-template-columns: 1fr;
+      }
+      .city-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .lead-form {
+        margin-bottom: -46px;
+      }
+    }
+    @media (max-width: 640px) {
+      .top-links { display: none; }
+      .nav-shell {
+        min-height: 74px;
+        padding: 0 16px;
+      }
+      .brand { width: min(70vw, 280px); min-width: 0; }
+      .header-actions .primary-link { display: none; }
+      .whatsapp-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+      }
+      .whatsapp-link span { display: none; }
+      .nav { top: 74px; }
+      .hero-content,
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+      .hero-content { padding-top: 64px; }
+      .trust-row,
+      .entity-grid,
+      .city-grid,
+      .process,
+      .metrics,
+      .page-grid,
+      form {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions .primary-link,
+      .hero-actions .secondary-link {
+        width: 100%;
+      }
+      .whatsapp-fields {
+        grid-template-columns: 1fr;
+      }
+      .quick-panel,
+      .service-card,
+      .framework-copy,
+      .split-copy,
+      .metric-panel,
+      .lead-form {
+        padding: 22px;
+      }
+      .footer { padding-top: 94px; }
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        justify-content: center;
+        font-size: 0;
+      }
+      .whatsapp-float svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-strip">
+    <div class="wrap">
+      <span>China company setup, tax, banking and compliance support for foreign founders.</span>
+      <div class="top-links">
+        <a href="mailto:info@chinabusinesssetup.com">info@chinabusinesssetup.com</a>
+        <a href="../pages/contact.html">Free Setup Assessment</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html" aria-label="ChinaBusinessSetup home">
+        <img src="../assets/chinabusinesssetup-logo.png" alt="China Business Setup - Your Trusted Partner for Business Expansion in China">
+      </a>
+      <input class="menu-toggle" type="checkbox" id="menu-toggle">
+      <label class="mobile-menu" for="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </label>
+      <nav class="nav" aria-label="Primary navigation">
+        
+                <div class="nav-item">
+          <a class="nav-top" href="../index.html">Home</a>
+        </div>
+<div class="nav-item">
+          <a class="nav-top" href="../pages/company-registration.html">Company Registration <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+            
+          <div class="mega-col">
+            <h3 class="mega-title">China Company Registration</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/limited-liability-company.html">Limited Liability Company</a>
+              <a href="../pages/representative-office.html">Representative Office</a>
+              <a href="../pages/joint-stock-limited-company.html">Joint-Stock Limited Company</a>
+              <a href="../pages/branch-of-foreign-company.html">Branch of Foreign Company</a>
+              <a href="../pages/general-partnership.html">General Partnership</a>
+              <a href="../pages/limited-partnership.html">Limited Partnership</a>
+              <a href="../pages/special-general-partnership.html">Special General Partnership</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Hong Kong Company Registration</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/hong-kong-llc.html">Limited Liability Company (LLC)</a>
+              <a href="../pages/sole-proprietorship.html">Sole Proprietorship</a>
+              <a href="../pages/hong-kong-branch-office.html">Branch Office</a>
+              <a href="../pages/hong-kong-representative-office.html">Representative Office</a>
+              <a href="../pages/hong-kong-partnership.html">Partnership</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Registration Changes</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/change-registered-capital.html">Change Registered Capital</a>
+              <a href="../pages/change-shareholders.html">Change Shareholders</a>
+              <a href="../pages/change-registered-address.html">Change Registered Address</a>
+              <a href="../pages/change-legal-representative.html">Change Legal Representative</a>
+              <a href="../pages/change-business-scope.html">Change Business Scope</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/affiliated-services.html">Affiliated Services <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+            
+          <div class="mega-col">
+            <h3 class="mega-title">Tax Services</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/tax-accounting.html">Tax &amp; Accounting</a>
+              <a href="../pages/corporate-tax-return.html">Corporate Tax Return</a>
+              <a href="../pages/vat-filing.html">VAT Filing</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">One-off Services</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/company-closure.html">Company Closure</a>
+              <a href="../pages/trademark-registration.html">Trademark Registration</a>
+              <a href="../pages/import-license.html">Import License</a>
+              <a href="../pages/export-license.html">Export License</a>
+              <a href="../pages/icp-license.html">ICP License</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">E-commerce</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/sell-online-in-china.html">Sell online in China</a>
+              <a href="../pages/tmall.html">Tmall</a>
+              <a href="../pages/jd-store.html">JD Store</a>
+              <a href="../pages/xiaohongshu-shop.html">XiaoHongShu Shop</a>
+              <a href="../pages/douyin-store.html">Douyin Store</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/guides.html">Guides <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+          <div class="mega-col">
+            <h3 class="mega-title">Enter China</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#enter-china">Market Entry</a>
+              <a href="../pages/china-market-entry-guide.html">China Market Entry Guide</a>
+              <a href="../pages/wfoe-registration-guide.html">WFOE Registration Guide</a>
+              <a href="../pages/company-registration.html">Company Registration</a>
+              <a href="../pages/hong-kong.html">Hong Kong Company</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Operate in China</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#operate-china">Tax & Accounting</a>
+              <a href="../pages/tax-accounting.html">Accounting Support</a>
+              <a href="../pages/vat-filing.html">VAT Filing</a>
+              <a href="../pages/corporate-tax-return.html">Corporate Tax Return</a>
+              <a href="../pages/import-license.html">Import License</a>
+              <a href="../pages/export-license.html">Export License</a>
+              <a href="../pages/trademark-registration.html">Trademark Registration</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Exit or Restructure</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#exit-restructure">Change or Close Company</a>
+              <a href="../pages/company-closure.html">Company Closure</a>
+              <a href="../pages/change-business-scope.html">Change Business Scope</a>
+              <a href="../pages/change-registered-capital.html">Change Registered Capital</a>
+              <a href="../pages/change-shareholders.html">Change Shareholders</a>
+              <a href="../pages/change-registered-address.html">Change Registered Address</a>
+              <a href="../pages/change-legal-representative.html">Change Legal Representative</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/about-us.html">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/reviews.html">Reviews</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="mailto:info@chinabusinesssetup.com" aria-label="Email China Business Setup">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        </a>
+        <a class="whatsapp-link" href="https://wa.me/8615118019493" target="_blank" rel="noopener" aria-label="Chat with China Business Setup on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/><path d="M8.8 9.2c.2 3.1 2.9 5.8 6 6"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="inner-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../pages/affiliated-services.html">Affiliated Services</a> / Corporate Tax Return Filing in China</div>
+        <h1>Corporate Tax Return Filing in China</h1>
+        <p>Corporate income tax filing and annual reconciliation support for foreign-owned companies in China.</p>
+      </div>
+    </section>
+    <section class="section-soft">
+      <div class="container inner-grid">
+        <div class="split-copy">
+          <div class="section-kicker">Corporate Income Tax</div>
+          <h2>Accurate Corporate Tax Return Support</h2>
+          <p>China companies need to calculate corporate income tax, prepare supporting schedules and complete annual reconciliation within the required filing window. We help review financial records, organize deductible expenses and prepare filings to reduce compliance risks.</p>
+          <a class="primary-link" href="../pages/contact.html">Get a Quote</a>
+        </div>
+        <div class="page-grid"><article class="page-card"><h3>Quarterly CIT Filing</h3><p>Calculate and file corporate income tax prepayments based on accounting records and tax bureau requirements.</p></article><article class="page-card"><h3>Annual Reconciliation</h3><p>Prepare annual CIT reconciliation, adjust tax items and submit the final return.</p></article><article class="page-card"><h3>Deduction Review</h3><p>Review expense documents, contracts and invoices to support compliant deductions.</p></article><article class="page-card"><h3>Tax Risk Check</h3><p>Identify missing records, abnormal items and potential filing issues before submission.</p></article></div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">What We Help With</div>
+          <h2>Service Scope</h2>
+          <p>Clear, practical support designed for foreign founders and international companies managing China operations.</p>
+        </div>
+        <div class="page-grid"><article class="page-card"><h3>Profit &amp; Loss Review</h3><p>Check revenue, costs and expenses against accounting records.</p></article><article class="page-card"><h3>Tax Adjustment Schedule</h3><p>Prepare adjustments for non-deductible expenses and preferential policies where applicable.</p></article><article class="page-card"><h3>Submission Coordination</h3><p>Coordinate online filing and tax bureau follow-up.</p></article><article class="page-card"><h3>Compliance Report</h3><p>Summarize filing outcome and next compliance actions.</p></article></div>
+      </div>
+    </section>
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Working Process</div>
+          <h2>How We Work</h2>
+          <p>We keep the process bilingual, transparent and action-oriented from the first consultation to final follow-up.</p>
+        </div>
+        <div class="page-grid"><article class="page-card"><h3>1. Consultation</h3><p>We review your business model, company status and target timeline.</p></article><article class="page-card"><h3>2. Checklist</h3><p>We provide a tailored document checklist and explain what is needed.</p></article><article class="page-card"><h3>3. Preparation</h3><p>We prepare application materials, translations and supporting records.</p></article><article class="page-card"><h3>4. Submission</h3><p>We coordinate filings, platform applications or authority communication.</p></article><article class="page-card"><h3>5. Follow-up</h3><p>We track progress, respond to feedback and guide the next compliance step.</p></article></div>
+      </div>
+    </section>
+    <section>
+      <div class="container inner-grid">
+        <div class="split-copy">
+          <div class="section-kicker">Documents</div>
+          <h2>Typical Documents Required</h2>
+          <p>Exact requirements depend on your city, company status, product category and service route. We provide a tailored checklist after reviewing your case.</p>
+        </div>
+        <div class="page-card"><h3>Common Checklist</h3><ul><li>Financial statements</li><li>General ledger</li><li>Invoices and contracts</li><li>Bank statements</li><li>Previous tax filings</li></ul></div>
+      </div>
+    </section>
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">FAQs</div>
+          <h2>Corporate Tax Return Filing in China FAQs</h2>
+          <p>Common questions clients ask before starting this service.</p>
+        </div>
+        <div class="faq-grid"><article class="faq"><h3>When is annual CIT reconciliation due?</h3><p>The annual reconciliation is typically completed after year-end within the official filing period.</p></article><article class="faq"><h3>Is quarterly CIT required?</h3><p>Most companies must make periodic corporate income tax prepayments.</p></article><article class="faq"><h3>Can losses be carried forward?</h3><p>Loss treatment depends on China tax rules and the company&#x27;s records; we can review the situation.</p></article><article class="faq"><h3>What if records are incomplete?</h3><p>We help identify missing documents and organize a practical correction plan.</p></article></div>
+      </div>
+    </section>
+    <section class="lead-section">
+      <div class="container lead-wrap">
+        <div class="lead-copy">
+          <div class="section-kicker">Start Here</div>
+          <h2>Get Advice for Corporate Tax Return Filing in China</h2>
+          <p>Tell us your company status, business activity and timeline. Our team will reply with a practical service route.</p>
+        </div>
+        <div class="lead-form">
+          <h3>Tell us about your business</h3>
+          <form>
+            <input name="name" placeholder="Your Name *" required>
+            <input name="email" type="email" placeholder="Email *" required>
+            <label class="field-label full" for="phone_country_code">WhatsApp (recommended)</label>
+            <div class="whatsapp-fields full">
+              <select name="phone_country_code" id="phone_country_code" aria-label="WhatsApp country code" required>
+                <option value="">Country / region code *</option>
+                <option value="+93">🇦🇫 +93 Afghanistan</option>
+                <option value="+355">🇦🇱 +355 Albania</option>
+                <option value="+213">🇩🇿 +213 Algeria</option>
+                <option value="+376">🇦🇩 +376 Andorra</option>
+                <option value="+244">🇦🇴 +244 Angola</option>
+                <option value="+1-268">🇦🇬 +1-268 Antigua and Barbuda</option>
+                <option value="+54">🇦🇷 +54 Argentina</option>
+                <option value="+374">🇦🇲 +374 Armenia</option>
+                <option value="+61">🇦🇺 +61 Australia</option>
+                <option value="+43">🇦🇹 +43 Austria</option>
+                <option value="+994">🇦🇿 +994 Azerbaijan</option>
+                <option value="+1-242">🇧🇸 +1-242 Bahamas</option>
+                <option value="+973">🇧🇭 +973 Bahrain</option>
+                <option value="+880">🇧🇩 +880 Bangladesh</option>
+                <option value="+1-246">🇧🇧 +1-246 Barbados</option>
+                <option value="+375">🇧🇾 +375 Belarus</option>
+                <option value="+32">🇧🇪 +32 Belgium</option>
+                <option value="+501">🇧🇿 +501 Belize</option>
+                <option value="+229">🇧🇯 +229 Benin</option>
+                <option value="+975">🇧🇹 +975 Bhutan</option>
+                <option value="+591">🇧🇴 +591 Bolivia</option>
+                <option value="+387">🇧🇦 +387 Bosnia and Herzegovina</option>
+                <option value="+267">🇧🇼 +267 Botswana</option>
+                <option value="+55">🇧🇷 +55 Brazil</option>
+                <option value="+673">🇧🇳 +673 Brunei</option>
+                <option value="+359">🇧🇬 +359 Bulgaria</option>
+                <option value="+226">🇧🇫 +226 Burkina Faso</option>
+                <option value="+257">🇧🇮 +257 Burundi</option>
+                <option value="+238">🇨🇻 +238 Cabo Verde</option>
+                <option value="+855">🇰🇭 +855 Cambodia</option>
+                <option value="+237">🇨🇲 +237 Cameroon</option>
+                <option value="+1">🇨🇦 +1 Canada</option>
+                <option value="+236">🇨🇫 +236 Central African Republic</option>
+                <option value="+235">🇹🇩 +235 Chad</option>
+                <option value="+56">🇨🇱 +56 Chile</option>
+                <option value="+86">🇨🇳 +86 China</option>
+                <option value="+57">🇨🇴 +57 Colombia</option>
+                <option value="+269">🇰🇲 +269 Comoros</option>
+                <option value="+243">🇨🇩 +243 Congo, Democratic Republic of the</option>
+                <option value="+242">🇨🇬 +242 Congo, Republic of the</option>
+                <option value="+506">🇨🇷 +506 Costa Rica</option>
+                <option value="+225">🇨🇮 +225 Cote d'Ivoire</option>
+                <option value="+385">🇭🇷 +385 Croatia</option>
+                <option value="+53">🇨🇺 +53 Cuba</option>
+                <option value="+357">🇨🇾 +357 Cyprus</option>
+                <option value="+420">🇨🇿 +420 Czech Republic</option>
+                <option value="+45">🇩🇰 +45 Denmark</option>
+                <option value="+253">🇩🇯 +253 Djibouti</option>
+                <option value="+1-767">🇩🇲 +1-767 Dominica</option>
+                <option value="+1-809">🇩🇴 +1-809 Dominican Republic</option>
+                <option value="+593">🇪🇨 +593 Ecuador</option>
+                <option value="+20">🇪🇬 +20 Egypt</option>
+                <option value="+503">🇸🇻 +503 El Salvador</option>
+                <option value="+240">🇬🇶 +240 Equatorial Guinea</option>
+                <option value="+291">🇪🇷 +291 Eritrea</option>
+                <option value="+372">🇪🇪 +372 Estonia</option>
+                <option value="+268">🇸🇿 +268 Eswatini</option>
+                <option value="+251">🇪🇹 +251 Ethiopia</option>
+                <option value="+679">🇫🇯 +679 Fiji</option>
+                <option value="+358">🇫🇮 +358 Finland</option>
+                <option value="+33">🇫🇷 +33 France</option>
+                <option value="+241">🇬🇦 +241 Gabon</option>
+                <option value="+220">🇬🇲 +220 Gambia</option>
+                <option value="+995">🇬🇪 +995 Georgia</option>
+                <option value="+49">🇩🇪 +49 Germany</option>
+                <option value="+233">🇬🇭 +233 Ghana</option>
+                <option value="+30">🇬🇷 +30 Greece</option>
+                <option value="+1-473">🇬🇩 +1-473 Grenada</option>
+                <option value="+502">🇬🇹 +502 Guatemala</option>
+                <option value="+224">🇬🇳 +224 Guinea</option>
+                <option value="+245">🇬🇼 +245 Guinea-Bissau</option>
+                <option value="+592">🇬🇾 +592 Guyana</option>
+                <option value="+509">🇭🇹 +509 Haiti</option>
+                <option value="+504">🇭🇳 +504 Honduras</option>
+                <option value="+852">🇭🇰 +852 Hong Kong SAR</option>
+                <option value="+36">🇭🇺 +36 Hungary</option>
+                <option value="+354">🇮🇸 +354 Iceland</option>
+                <option value="+91">🇮🇳 +91 India</option>
+                <option value="+62">🇮🇩 +62 Indonesia</option>
+                <option value="+98">🇮🇷 +98 Iran</option>
+                <option value="+964">🇮🇶 +964 Iraq</option>
+                <option value="+353">🇮🇪 +353 Ireland</option>
+                <option value="+972">🇮🇱 +972 Israel</option>
+                <option value="+39">🇮🇹 +39 Italy</option>
+                <option value="+1-876">🇯🇲 +1-876 Jamaica</option>
+                <option value="+81">🇯🇵 +81 Japan</option>
+                <option value="+962">🇯🇴 +962 Jordan</option>
+                <option value="+7">🇰🇿 +7 Kazakhstan</option>
+                <option value="+254">🇰🇪 +254 Kenya</option>
+                <option value="+686">🇰🇮 +686 Kiribati</option>
+                <option value="+965">🇰🇼 +965 Kuwait</option>
+                <option value="+996">🇰🇬 +996 Kyrgyzstan</option>
+                <option value="+856">🇱🇦 +856 Laos</option>
+                <option value="+371">🇱🇻 +371 Latvia</option>
+                <option value="+961">🇱🇧 +961 Lebanon</option>
+                <option value="+266">🇱🇸 +266 Lesotho</option>
+                <option value="+231">🇱🇷 +231 Liberia</option>
+                <option value="+218">🇱🇾 +218 Libya</option>
+                <option value="+423">🇱🇮 +423 Liechtenstein</option>
+                <option value="+370">🇱🇹 +370 Lithuania</option>
+                <option value="+352">🇱🇺 +352 Luxembourg</option>
+                <option value="+853">🇲🇴 +853 Macau SAR</option>
+                <option value="+261">🇲🇬 +261 Madagascar</option>
+                <option value="+265">🇲🇼 +265 Malawi</option>
+                <option value="+60">🇲🇾 +60 Malaysia</option>
+                <option value="+960">🇲🇻 +960 Maldives</option>
+                <option value="+223">🇲🇱 +223 Mali</option>
+                <option value="+356">🇲🇹 +356 Malta</option>
+                <option value="+692">🇲🇭 +692 Marshall Islands</option>
+                <option value="+222">🇲🇷 +222 Mauritania</option>
+                <option value="+230">🇲🇺 +230 Mauritius</option>
+                <option value="+52">🇲🇽 +52 Mexico</option>
+                <option value="+691">🇫🇲 +691 Micronesia</option>
+                <option value="+373">🇲🇩 +373 Moldova</option>
+                <option value="+377">🇲🇨 +377 Monaco</option>
+                <option value="+976">🇲🇳 +976 Mongolia</option>
+                <option value="+382">🇲🇪 +382 Montenegro</option>
+                <option value="+212">🇲🇦 +212 Morocco</option>
+                <option value="+258">🇲🇿 +258 Mozambique</option>
+                <option value="+95">🇲🇲 +95 Myanmar</option>
+                <option value="+264">🇳🇦 +264 Namibia</option>
+                <option value="+674">🇳🇷 +674 Nauru</option>
+                <option value="+977">🇳🇵 +977 Nepal</option>
+                <option value="+31">🇳🇱 +31 Netherlands</option>
+                <option value="+64">🇳🇿 +64 New Zealand</option>
+                <option value="+505">🇳🇮 +505 Nicaragua</option>
+                <option value="+227">🇳🇪 +227 Niger</option>
+                <option value="+234">🇳🇬 +234 Nigeria</option>
+                <option value="+850">🇰🇵 +850 North Korea</option>
+                <option value="+389">🇲🇰 +389 North Macedonia</option>
+                <option value="+47">🇳🇴 +47 Norway</option>
+                <option value="+968">🇴🇲 +968 Oman</option>
+                <option value="+92">🇵🇰 +92 Pakistan</option>
+                <option value="+680">🇵🇼 +680 Palau</option>
+                <option value="+970">🇵🇸 +970 Palestine</option>
+                <option value="+507">🇵🇦 +507 Panama</option>
+                <option value="+675">🇵🇬 +675 Papua New Guinea</option>
+                <option value="+595">🇵🇾 +595 Paraguay</option>
+                <option value="+51">🇵🇪 +51 Peru</option>
+                <option value="+63">🇵🇭 +63 Philippines</option>
+                <option value="+48">🇵🇱 +48 Poland</option>
+                <option value="+351">🇵🇹 +351 Portugal</option>
+                <option value="+974">🇶🇦 +974 Qatar</option>
+                <option value="+40">🇷🇴 +40 Romania</option>
+                <option value="+7">🇷🇺 +7 Russia</option>
+                <option value="+250">🇷🇼 +250 Rwanda</option>
+                <option value="+1-869">🇰🇳 +1-869 Saint Kitts and Nevis</option>
+                <option value="+1-758">🇱🇨 +1-758 Saint Lucia</option>
+                <option value="+1-784">🇻🇨 +1-784 Saint Vincent and the Grenadines</option>
+                <option value="+685">🇼🇸 +685 Samoa</option>
+                <option value="+378">🇸🇲 +378 San Marino</option>
+                <option value="+239">🇸🇹 +239 Sao Tome and Principe</option>
+                <option value="+966">🇸🇦 +966 Saudi Arabia</option>
+                <option value="+221">🇸🇳 +221 Senegal</option>
+                <option value="+381">🇷🇸 +381 Serbia</option>
+                <option value="+248">🇸🇨 +248 Seychelles</option>
+                <option value="+232">🇸🇱 +232 Sierra Leone</option>
+                <option value="+65">🇸🇬 +65 Singapore</option>
+                <option value="+421">🇸🇰 +421 Slovakia</option>
+                <option value="+386">🇸🇮 +386 Slovenia</option>
+                <option value="+677">🇸🇧 +677 Solomon Islands</option>
+                <option value="+252">🇸🇴 +252 Somalia</option>
+                <option value="+27">🇿🇦 +27 South Africa</option>
+                <option value="+82">🇰🇷 +82 South Korea</option>
+                <option value="+211">🇸🇸 +211 South Sudan</option>
+                <option value="+34">🇪🇸 +34 Spain</option>
+                <option value="+94">🇱🇰 +94 Sri Lanka</option>
+                <option value="+249">🇸🇩 +249 Sudan</option>
+                <option value="+597">🇸🇷 +597 Suriname</option>
+                <option value="+46">🇸🇪 +46 Sweden</option>
+                <option value="+41">🇨🇭 +41 Switzerland</option>
+                <option value="+963">🇸🇾 +963 Syria</option>
+                <option value="+886">🇹🇼 +886 Taiwan</option>
+                <option value="+992">🇹🇯 +992 Tajikistan</option>
+                <option value="+255">🇹🇿 +255 Tanzania</option>
+                <option value="+66">🇹🇭 +66 Thailand</option>
+                <option value="+670">🇹🇱 +670 Timor-Leste</option>
+                <option value="+228">🇹🇬 +228 Togo</option>
+                <option value="+676">🇹🇴 +676 Tonga</option>
+                <option value="+1-868">🇹🇹 +1-868 Trinidad and Tobago</option>
+                <option value="+216">🇹🇳 +216 Tunisia</option>
+                <option value="+90">🇹🇷 +90 Turkey</option>
+                <option value="+993">🇹🇲 +993 Turkmenistan</option>
+                <option value="+688">🇹🇻 +688 Tuvalu</option>
+                <option value="+256">🇺🇬 +256 Uganda</option>
+                <option value="+380">🇺🇦 +380 Ukraine</option>
+                <option value="+971">🇦🇪 +971 United Arab Emirates</option>
+                <option value="+44">🇬🇧 +44 United Kingdom</option>
+                <option value="+1">🇺🇸 +1 United States</option>
+                <option value="+598">🇺🇾 +598 Uruguay</option>
+                <option value="+998">🇺🇿 +998 Uzbekistan</option>
+                <option value="+678">🇻🇺 +678 Vanuatu</option>
+                <option value="+379">🇻🇦 +379 Vatican City</option>
+                <option value="+58">🇻🇪 +58 Venezuela</option>
+                <option value="+84">🇻🇳 +84 Vietnam</option>
+                <option value="+967">🇾🇪 +967 Yemen</option>
+                <option value="+260">🇿🇲 +260 Zambia</option>
+                <option value="+263">🇿🇼 +263 Zimbabwe</option>
+              </select>
+              <input name="whatsapp_number" type="tel" placeholder="555 000 0000" inputmode="tel" required>
+            </div>
+            <p class="form-note full">Fastest way to reach us. Please select the country/region code first, then enter your WhatsApp number.</p>
+            <select name="business_type">
+              <option>Type of Business</option>
+              <option>Trading / Import & Export</option>
+              <option>E-commerce / Consumer Brand</option>
+              <option>Consulting / Professional Services</option>
+              <option>Technology / Software</option>
+              <option>Manufacturing / Sourcing</option>
+              <option>Other</option>
+            </select>
+            <select name="nationality">
+              <option>Shareholder Nationality</option>
+              <option>Afghanistan 🇦🇫</option>
+              <option>Albania 🇦🇱</option>
+              <option>Algeria 🇩🇿</option>
+              <option>Andorra 🇦🇩</option>
+              <option>Angola 🇦🇴</option>
+              <option>Antigua and Barbuda 🇦🇬</option>
+              <option>Argentina 🇦🇷</option>
+              <option>Armenia 🇦🇲</option>
+              <option>Australia 🇦🇺</option>
+              <option>Austria 🇦🇹</option>
+              <option>Azerbaijan 🇦🇿</option>
+              <option>Bahamas 🇧🇸</option>
+              <option>Bahrain 🇧🇭</option>
+              <option>Bangladesh 🇧🇩</option>
+              <option>Barbados 🇧🇧</option>
+              <option>Belarus 🇧🇾</option>
+              <option>Belgium 🇧🇪</option>
+              <option>Belize 🇧🇿</option>
+              <option>Benin 🇧🇯</option>
+              <option>Bhutan 🇧🇹</option>
+              <option>Bolivia 🇧🇴</option>
+              <option>Bosnia and Herzegovina 🇧🇦</option>
+              <option>Botswana 🇧🇼</option>
+              <option>Brazil 🇧🇷</option>
+              <option>Brunei 🇧🇳</option>
+              <option>Bulgaria 🇧🇬</option>
+              <option>Burkina Faso 🇧🇫</option>
+              <option>Burundi 🇧🇮</option>
+              <option>Cabo Verde 🇨🇻</option>
+              <option>Cambodia 🇰🇭</option>
+              <option>Cameroon 🇨🇲</option>
+              <option>Canada 🇨🇦</option>
+              <option>Central African Republic 🇨🇫</option>
+              <option>Chad 🇹🇩</option>
+              <option>Chile 🇨🇱</option>
+              <option>China 🇨🇳</option>
+              <option>Colombia 🇨🇴</option>
+              <option>Comoros 🇰🇲</option>
+              <option>Congo, Democratic Republic of the 🇨🇩</option>
+              <option>Congo, Republic of the 🇨🇬</option>
+              <option>Costa Rica 🇨🇷</option>
+              <option>Cote d'Ivoire 🇨🇮</option>
+              <option>Croatia 🇭🇷</option>
+              <option>Cuba 🇨🇺</option>
+              <option>Cyprus 🇨🇾</option>
+              <option>Czech Republic 🇨🇿</option>
+              <option>Denmark 🇩🇰</option>
+              <option>Djibouti 🇩🇯</option>
+              <option>Dominica 🇩🇲</option>
+              <option>Dominican Republic 🇩🇴</option>
+              <option>Ecuador 🇪🇨</option>
+              <option>Egypt 🇪🇬</option>
+              <option>El Salvador 🇸🇻</option>
+              <option>Equatorial Guinea 🇬🇶</option>
+              <option>Eritrea 🇪🇷</option>
+              <option>Estonia 🇪🇪</option>
+              <option>Eswatini 🇸🇿</option>
+              <option>Ethiopia 🇪🇹</option>
+              <option>Fiji 🇫🇯</option>
+              <option>Finland 🇫🇮</option>
+              <option>France 🇫🇷</option>
+              <option>Gabon 🇬🇦</option>
+              <option>Gambia 🇬🇲</option>
+              <option>Georgia 🇬🇪</option>
+              <option>Germany 🇩🇪</option>
+              <option>Ghana 🇬🇭</option>
+              <option>Greece 🇬🇷</option>
+              <option>Grenada 🇬🇩</option>
+              <option>Guatemala 🇬🇹</option>
+              <option>Guinea 🇬🇳</option>
+              <option>Guinea-Bissau 🇬🇼</option>
+              <option>Guyana 🇬🇾</option>
+              <option>Haiti 🇭🇹</option>
+              <option>Honduras 🇭🇳</option>
+              <option>Hong Kong SAR 🇭🇰</option>
+              <option>Hungary 🇭🇺</option>
+              <option>Iceland 🇮🇸</option>
+              <option>India 🇮🇳</option>
+              <option>Indonesia 🇮🇩</option>
+              <option>Iran 🇮🇷</option>
+              <option>Iraq 🇮🇶</option>
+              <option>Ireland 🇮🇪</option>
+              <option>Israel 🇮🇱</option>
+              <option>Italy 🇮🇹</option>
+              <option>Jamaica 🇯🇲</option>
+              <option>Japan 🇯🇵</option>
+              <option>Jordan 🇯🇴</option>
+              <option>Kazakhstan 🇰🇿</option>
+              <option>Kenya 🇰🇪</option>
+              <option>Kiribati 🇰🇮</option>
+              <option>Kuwait 🇰🇼</option>
+              <option>Kyrgyzstan 🇰🇬</option>
+              <option>Laos 🇱🇦</option>
+              <option>Latvia 🇱🇻</option>
+              <option>Lebanon 🇱🇧</option>
+              <option>Lesotho 🇱🇸</option>
+              <option>Liberia 🇱🇷</option>
+              <option>Libya 🇱🇾</option>
+              <option>Liechtenstein 🇱🇮</option>
+              <option>Lithuania 🇱🇹</option>
+              <option>Luxembourg 🇱🇺</option>
+              <option>Macau SAR 🇲🇴</option>
+              <option>Madagascar 🇲🇬</option>
+              <option>Malawi 🇲🇼</option>
+              <option>Malaysia 🇲🇾</option>
+              <option>Maldives 🇲🇻</option>
+              <option>Mali 🇲🇱</option>
+              <option>Malta 🇲🇹</option>
+              <option>Marshall Islands 🇲🇭</option>
+              <option>Mauritania 🇲🇷</option>
+              <option>Mauritius 🇲🇺</option>
+              <option>Mexico 🇲🇽</option>
+              <option>Micronesia 🇫🇲</option>
+              <option>Moldova 🇲🇩</option>
+              <option>Monaco 🇲🇨</option>
+              <option>Mongolia 🇲🇳</option>
+              <option>Montenegro 🇲🇪</option>
+              <option>Morocco 🇲🇦</option>
+              <option>Mozambique 🇲🇿</option>
+              <option>Myanmar 🇲🇲</option>
+              <option>Namibia 🇳🇦</option>
+              <option>Nauru 🇳🇷</option>
+              <option>Nepal 🇳🇵</option>
+              <option>Netherlands 🇳🇱</option>
+              <option>New Zealand 🇳🇿</option>
+              <option>Nicaragua 🇳🇮</option>
+              <option>Niger 🇳🇪</option>
+              <option>Nigeria 🇳🇬</option>
+              <option>North Korea 🇰🇵</option>
+              <option>North Macedonia 🇲🇰</option>
+              <option>Norway 🇳🇴</option>
+              <option>Oman 🇴🇲</option>
+              <option>Pakistan 🇵🇰</option>
+              <option>Palau 🇵🇼</option>
+              <option>Palestine 🇵🇸</option>
+              <option>Panama 🇵🇦</option>
+              <option>Papua New Guinea 🇵🇬</option>
+              <option>Paraguay 🇵🇾</option>
+              <option>Peru 🇵🇪</option>
+              <option>Philippines 🇵🇭</option>
+              <option>Poland 🇵🇱</option>
+              <option>Portugal 🇵🇹</option>
+              <option>Qatar 🇶🇦</option>
+              <option>Romania 🇷🇴</option>
+              <option>Russia 🇷🇺</option>
+              <option>Rwanda 🇷🇼</option>
+              <option>Saint Kitts and Nevis 🇰🇳</option>
+              <option>Saint Lucia 🇱🇨</option>
+              <option>Saint Vincent and the Grenadines 🇻🇨</option>
+              <option>Samoa 🇼🇸</option>
+              <option>San Marino 🇸🇲</option>
+              <option>Sao Tome and Principe 🇸🇹</option>
+              <option>Saudi Arabia 🇸🇦</option>
+              <option>Senegal 🇸🇳</option>
+              <option>Serbia 🇷🇸</option>
+              <option>Seychelles 🇸🇨</option>
+              <option>Sierra Leone 🇸🇱</option>
+              <option>Singapore 🇸🇬</option>
+              <option>Slovakia 🇸🇰</option>
+              <option>Slovenia 🇸🇮</option>
+              <option>Solomon Islands 🇸🇧</option>
+              <option>Somalia 🇸🇴</option>
+              <option>South Africa 🇿🇦</option>
+              <option>South Korea 🇰🇷</option>
+              <option>South Sudan 🇸🇸</option>
+              <option>Spain 🇪🇸</option>
+              <option>Sri Lanka 🇱🇰</option>
+              <option>Sudan 🇸🇩</option>
+              <option>Suriname 🇸🇷</option>
+              <option>Sweden 🇸🇪</option>
+              <option>Switzerland 🇨🇭</option>
+              <option>Syria 🇸🇾</option>
+              <option>Taiwan 🇹🇼</option>
+              <option>Tajikistan 🇹🇯</option>
+              <option>Tanzania 🇹🇿</option>
+              <option>Thailand 🇹🇭</option>
+              <option>Timor-Leste 🇹🇱</option>
+              <option>Togo 🇹🇬</option>
+              <option>Tonga 🇹🇴</option>
+              <option>Trinidad and Tobago 🇹🇹</option>
+              <option>Tunisia 🇹🇳</option>
+              <option>Turkey 🇹🇷</option>
+              <option>Turkmenistan 🇹🇲</option>
+              <option>Tuvalu 🇹🇻</option>
+              <option>Uganda 🇺🇬</option>
+              <option>Ukraine 🇺🇦</option>
+              <option>United Arab Emirates 🇦🇪</option>
+              <option>United Kingdom 🇬🇧</option>
+              <option>United States 🇺🇸</option>
+              <option>Uruguay 🇺🇾</option>
+              <option>Uzbekistan 🇺🇿</option>
+              <option>Vanuatu 🇻🇺</option>
+              <option>Vatican City 🇻🇦</option>
+              <option>Venezuela 🇻🇪</option>
+              <option>Vietnam 🇻🇳</option>
+              <option>Yemen 🇾🇪</option>
+              <option>Zambia 🇿🇲</option>
+              <option>Zimbabwe 🇿🇼</option>
+              <option>Other 🌐</option>
+            </select>
+            <select name="city">
+              <option>Preferred City</option>
+              <option>Shenzhen</option>
+              <option>Shanghai</option>
+              <option>Guangzhou</option>
+              <option>Beijing</option>
+              <option>Hong Kong</option>
+              <option>Others</option>
+            </select>
+            <select name="timeline">
+              <option>Timeline</option>
+              <option>ASAP</option>
+              <option>Within 1 Month</option>
+              <option>Within 3 Months</option>
+              <option>Researching Options</option>
+            </select>
+            <textarea class="full" name="message" placeholder="Message / Business plan summary"></textarea>
+            <label class="consent full"><input type="checkbox"> I agree to be contacted by ChinaBusinessSetup about my inquiry.</label>
+            <button class="submit full" type="submit">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/chinabusinesssetup-logo.png" alt="China Business Setup">
+        <p>Your trusted partner for business expansion in China, with practical support from company registration through tax, banking and ongoing compliance.</p>
+      </div>
+      <div>
+        <h3>Company Setup</h3>
+        <a href="../pages/limited-liability-company.html">WFOE / LLC Registration</a>
+        <a href="../pages/representative-office.html">Representative Office</a>
+        <a href="../pages/hong-kong-llc.html">Hong Kong Company</a>
+        <a href="../pages/change-business-scope.html">Registration Changes</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="../pages/bank-account-opening.html">Bank Account Opening</a>
+        <a href="../pages/tax-accounting.html">Tax & Accounting</a>
+        <a href="../pages/trademark-registration.html">Trademark Registration</a>
+        <a href="../pages/sell-online-in-china.html">E-commerce Entry</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <span>Tengfei Industrial Building, No. 6 Taohua Road<br>Fubao Community, Fubao Street<br>Futian District, Shenzhen, China</span>
+        <a href="tel:+8615118019493">WeChat +86 15118019493</a>
+        <a href="https://wa.me/8615118019493" target="_blank" rel="noopener">WhatsApp +86 15118019493 (WhatsApp Business)</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 ChinaBusinessSetup. All rights reserved.</span>
+      <span>Company registration, compliance and market entry support for foreign businesses.</span>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/8615118019493" target="_blank" rel="noopener" aria-label="Chat with China Business Setup on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/><path d="M8.8 9.2c.2 3.1 2.9 5.8 6 6"/></svg>
+    WhatsApp
+  </a>
+  <script>
+    (function () {
+      var closingClass = "mega-click-closing";
+
+      function clearClosedMenus(event) {
+        document.querySelectorAll(".nav-item." + closingClass).forEach(function (item) {
+          if (!item.contains(event.target)) item.classList.remove(closingClass);
+        });
+      }
+
+      document.querySelectorAll(".nav-item").forEach(function (item) {
+        item.addEventListener("mouseleave", function () {
+          item.classList.remove(closingClass);
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest(".mega a");
+        if (!link) return;
+
+        var item = link.closest(".nav-item");
+        if (item) item.classList.add(closingClass);
+
+        if (document.activeElement && typeof document.activeElement.blur === "function") {
+          document.activeElement.blur();
+        }
+      });
+
+      document.addEventListener("pointermove", clearClosedMenus);
+    })();
+  </script>
+</body>
+</html>

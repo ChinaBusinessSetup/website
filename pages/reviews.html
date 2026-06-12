@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews | ChinaBusinessSetup</title>
+  <meta name="description" content="Read anonymized client reviews and complex case examples for foreign company registration, banking, tax, licensing, e-commerce entry and business changes in China." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0c1f3f;
+      --deep: #092762;
+      --blue: #176fd1;
+      --sky: #3ab4e8;
+      --cyan: #19a7c8;
+      --mint: #0b9f8f;
+      --amber: #d9972a;
+      --paper: #ffffff;
+      --soft: #f4f8fc;
+      --mist: #e6eef7;
+      --line: #d8e2ee;
+      --muted: #53657d;
+      --shadow: 0 22px 60px rgba(9, 39, 98, .14);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .top-strip {
+      background: #071c39;
+      color: #d8e9ff;
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+    .top-strip .wrap {
+      max-width: 1460px;
+      margin: 0 auto;
+      min-height: 38px;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .top-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #fff;
+      font-weight: 600;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid rgba(216, 226, 238, .95);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 32px rgba(9, 39, 98, .06);
+    }
+    .nav-shell {
+      position: relative;
+      max-width: 1460px;
+      min-height: 88px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      width: clamp(250px, 22vw, 360px);
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      min-width: 230px;
+    }
+    .brand img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .menu-toggle {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .mobile-menu {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .mobile-menu svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+    }
+    .nav {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 2px;
+      min-height: 88px;
+      color: #17345f;
+      white-space: nowrap;
+      flex: 1 1 auto;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+    }
+    .nav-top {
+      min-height: 88px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 13px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #23395e;
+    }
+    .nav-top:hover,
+    .nav-item:focus-within .nav-top,
+    .nav-item:hover .nav-top {
+      color: var(--blue);
+    }
+    .caret {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid currentColor;
+      margin-top: 3px;
+    }
+    .nav-item:hover .caret,
+    .nav-item:focus-within .caret {
+      transform: rotate(180deg);
+    }
+    .mega {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 88px;
+      display: none;
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(9, 39, 98, .14);
+      z-index: 20;
+    }
+    .nav-item:hover .mega,
+    .nav-item:focus-within .mega {
+      display: grid;
+    }
+    .nav-item.mega-click-closing .mega {
+      display: none !important;
+    }
+    .mega-col {
+      min-height: 300px;
+      padding: 32px 36px;
+      border-right: 1px solid #e8eef5;
+    }
+    .mega-col:last-child {
+      border-right: 0;
+    }
+    .mega-title {
+      margin: 0 0 18px;
+      color: #2b3d62;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .mega-rule {
+      height: 2px;
+      width: 100%;
+      background: #2f4f79;
+      margin: 0 0 20px;
+    }
+    .mega-links {
+      display: grid;
+      gap: 0;
+    }
+    .mega-links a {
+      display: block;
+      padding: 11px 6px;
+      border-radius: 6px;
+      color: #2b3d62;
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+    .mega-links a:hover {
+      color: var(--blue);
+      background: #f4f8fc;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+    .icon-link {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      background: #fff;
+    }
+    .icon-link svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+    }
+    .primary-link,
+    .secondary-link {
+      min-height: 44px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+    .primary-link {
+      background: #176fd1;
+      color: #fff;
+      box-shadow: 0 14px 26px rgba(23, 111, 209, .22);
+    }
+    .secondary-link {
+      background: #fff;
+      color: var(--blue);
+      border-color: rgba(23, 111, 209, .28);
+    }
+    .whatsapp-link {
+      min-height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      background: #18b760;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 14px 26px rgba(24, 183, 96, .22);
+    }
+    .whatsapp-link svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+    }
+    .whatsapp-link:hover,
+    .whatsapp-float:hover {
+      background: #128c4e;
+    }
+    .hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      background: #071c39;
+      color: #fff;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(7, 28, 57, .96) 0%, rgba(7, 28, 57, .84) 34%, rgba(7, 28, 57, .36) 62%, rgba(7, 28, 57, .10) 100%),
+        linear-gradient(0deg, rgba(7, 28, 57, .68), rgba(7, 28, 57, .04) 46%),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      transform: scale(1.01);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 110px 24px 150px;
+      display: grid;
+      grid-template-columns: minmax(0, 620px) minmax(300px, 1fr);
+      gap: 64px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .08);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e7f4ff;
+      backdrop-filter: blur(12px);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #36d399;
+      box-shadow: 0 0 0 5px rgba(54, 211, 153, .12);
+    }
+    h1 {
+      margin: 24px 0 22px;
+      max-width: 650px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      color: #fff;
+    }
+    .hero-lead {
+      max-width: 590px;
+      margin: 0 0 34px;
+      color: #dbeaff;
+      font-size: 19px;
+      line-height: 1.72;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .hero-actions .primary-link,
+    .hero-actions .secondary-link {
+      min-height: 52px;
+      padding: 15px 22px;
+    }
+    .hero-actions .secondary-link {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .36);
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(12px);
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+    }
+    .trust-item {
+      min-height: 88px;
+      padding: 17px 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .18);
+      backdrop-filter: blur(12px);
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .trust-item span {
+      display: block;
+      font-size: 12px;
+      color: #d5e7fb;
+      line-height: 1.45;
+    }
+    .quick-panel {
+      justify-self: end;
+      width: min(100%, 380px);
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .94);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .72);
+    }
+    .quick-panel h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      color: var(--deep);
+    }
+    .quick-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .quick-list {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+    }
+    .quick-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #213b63;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+    .check {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(11, 159, 143, .12);
+      color: var(--mint);
+    }
+    .check svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      stroke-width: 3;
+    }
+    section {
+      padding: 78px 24px;
+    }
+    .section-soft { background: var(--soft); }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+    .section-kicker {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-heading h2,
+    .inner-hero h1,
+    .split-copy h2,
+    .lead-copy h2 {
+      letter-spacing: 0;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      color: var(--deep);
+    }
+    .section-heading p {
+      margin: 16px auto 0;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+    .section-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .service-card,
+    .entity-card,
+    .faq,
+    .page-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(9, 39, 98, .06);
+    }
+    .service-card {
+      padding: 28px;
+      min-height: 270px;
+    }
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: #eaf4ff;
+      color: var(--blue);
+    }
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    .service-card h3,
+    .entity-card h3,
+    .faq h3,
+    .page-card h3 {
+      margin: 0 0 12px;
+      color: var(--deep);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .service-card p,
+    .entity-card p,
+    .faq p,
+    .page-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      color: #24415f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .link-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .link-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+    .framework,
+    .city-content,
+    .insight-grid,
+    .lead-wrap,
+    .inner-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: stretch;
+    }
+    .framework-copy,
+    .split-copy {
+      padding: 38px;
+      border-radius: var(--radius);
+      background: #071c39;
+      color: #fff;
+      min-height: 100%;
+    }
+    .framework-copy h2,
+    .split-copy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.13;
+      color: #fff;
+    }
+    .framework-copy p,
+    .split-copy p {
+      margin: 0 0 26px;
+      color: #d6e6fa;
+      line-height: 1.75;
+    }
+    .entity-grid,
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .entity-card,
+    .page-card {
+      padding: 22px;
+    }
+    .city-band {
+      position: relative;
+      overflow: hidden;
+      background: #102b52;
+      color: #fff;
+    }
+    .city-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 43, 82, .96), rgba(16, 43, 82, .82), rgba(16, 43, 82, .96)),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      opacity: .32;
+    }
+    .city-content {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: center;
+    }
+    .city-content h2 {
+      margin: 0 0 16px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.14;
+      color: #fff;
+    }
+    .city-content p {
+      margin: 0;
+      color: #d6e6fa;
+      line-height: 1.75;
+    }
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .city {
+      min-height: 88px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .09);
+      backdrop-filter: blur(10px);
+    }
+    .city strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #fff;
+      font-size: 16px;
+    }
+    .city span {
+      color: #d9e8fa;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      min-height: 210px;
+      padding: 24px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--deep);
+      line-height: 1.28;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .metric-panel {
+      border-radius: var(--radius);
+      padding: 34px;
+      color: #fff;
+      background: linear-gradient(135deg, #176fd1, #0b9f8f);
+    }
+    .metric-panel h2 {
+      margin: 0 0 26px;
+      font-size: 31px;
+      line-height: 1.18;
+      color: #fff;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .metric {
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(255, 255, 255, .12);
+    }
+    .metric strong {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 4px;
+    }
+    .metric span {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #e8f5ff;
+    }
+    .faq-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .faq {
+      padding: 22px 24px;
+      box-shadow: none;
+    }
+    .lead-section {
+      background: #071c39;
+      color: #fff;
+      padding-bottom: 0;
+    }
+    .lead-wrap {
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: start;
+    }
+    .lead-copy {
+      padding: 16px 0 60px;
+    }
+    .lead-copy h2 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.11;
+    }
+    .lead-copy p {
+      margin: 0 0 28px;
+      color: #d9e8fa;
+      line-height: 1.75;
+    }
+    .contact-stack {
+      display: grid;
+      gap: 12px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .contact-item .service-icon {
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      background: rgba(255, 255, 255, .1);
+      color: #62dcf1;
+    }
+    .lead-form {
+      margin-bottom: -64px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .6);
+    }
+    .lead-form h3 {
+      margin: 0 0 16px;
+      color: var(--deep);
+      font-size: 24px;
+    }
+    .field-label {
+      color: var(--deep);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 4px 0 -4px;
+    }
+    .whatsapp-fields {
+      display: grid;
+      grid-template-columns: minmax(190px, .95fr) minmax(190px, 1.05fr);
+      gap: 13px;
+    }
+    .form-note {
+      margin: -4px 0 2px;
+      color: #66788d;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #cdd9e8;
+      border-radius: 6px;
+      padding: 13px 14px;
+      font: inherit;
+      color: #163154;
+      background: #fff;
+      outline: none;
+    }
+    textarea {
+      min-height: 104px;
+      resize: vertical;
+    }
+    .full { grid-column: 1 / -1; }
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .consent input {
+      min-height: auto;
+      width: auto;
+      margin-top: 3px;
+    }
+    .submit {
+      min-height: 52px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--blue);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .inner-hero {
+      position: relative;
+      overflow: hidden;
+      background: #071c39;
+      color: #fff;
+      padding: 88px 24px 92px;
+    }
+    .inner-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7, 28, 57, .97), rgba(7, 28, 57, .78), rgba(7, 28, 57, .48)),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      opacity: .95;
+    }
+    .inner-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      margin-bottom: 18px;
+      color: #d5e7fb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumb a {
+      color: #fff;
+    }
+    .inner-hero h1 {
+      margin: 0 0 18px;
+      max-width: 760px;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.07;
+      color: #fff;
+    }
+    .inner-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: #dbeaff;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+    .page-list {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+    .page-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: #223a61;
+      background: #fff;
+      font-weight: 800;
+    }
+    .page-list a:hover {
+      color: var(--blue);
+      border-color: rgba(23, 111, 209, .34);
+    }
+    .footer {
+      padding: 112px 24px 34px;
+      background: #f6f9fd;
+      color: #40546e;
+    }
+    .footer-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 34px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 34px;
+    }
+    .footer-logo {
+      max-width: 320px;
+      margin-bottom: 18px;
+    }
+    .footer p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .footer h3 {
+      margin: 0 0 15px;
+      color: var(--deep);
+      font-size: 16px;
+    }
+    .footer a,
+    .footer span {
+      display: block;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #40546e;
+    }
+    .copyright {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #66788d;
+    }
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 120;
+      min-height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 18px;
+      background: #18b760;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .2);
+    }
+    .whatsapp-float svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
+    @media (max-width: 1280px) {
+      .brand { width: clamp(230px, 20vw, 310px); }
+      .nav-top { padding: 0 9px; font-size: 14px; }
+      .header-actions .secondary-link { display: none; }
+    }
+    @media (max-width: 1080px) {
+      .nav-shell {
+        min-height: 78px;
+      }
+      .brand {
+        width: min(62vw, 320px);
+      }
+      .mobile-menu {
+        display: inline-flex;
+      }
+      .header-actions .icon-link,
+      .header-actions .secondary-link {
+        display: none;
+      }
+      .nav {
+        display: none;
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 78px;
+        min-height: auto;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        white-space: normal;
+      }
+      .menu-toggle:checked ~ .nav {
+        display: flex;
+      }
+      .nav-item {
+        display: block;
+        border-bottom: 1px solid #edf2f7;
+      }
+      .nav-item:last-child {
+        border-bottom: 0;
+      }
+      .nav-top {
+        width: 100%;
+        min-height: 46px;
+        justify-content: space-between;
+        padding: 12px;
+      }
+      .mega {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 0;
+        box-shadow: none;
+        background: #f8fbff;
+      }
+      .mega-col {
+        min-height: auto;
+        padding: 18px 14px;
+        border-right: 0;
+        border-top: 1px solid #e8eef5;
+      }
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 920px) {
+      .top-strip .wrap { justify-content: center; }
+      .hero { min-height: auto; }
+      .hero-media {
+        background-image:
+          linear-gradient(180deg, rgba(7, 28, 57, .92) 0%, rgba(7, 28, 57, .82) 46%, rgba(7, 28, 57, .58) 100%),
+          url("../assets/shenzhen-spring-bamboo-hero.png");
+        background-position: center;
+      }
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: 84px 24px 72px;
+      }
+      .quick-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+      .service-grid,
+      .framework,
+      .city-content,
+      .insight-grid,
+      .lead-wrap,
+      .footer-grid,
+      .inner-grid {
+        grid-template-columns: 1fr;
+      }
+      .city-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .lead-form {
+        margin-bottom: -46px;
+      }
+    }
+    @media (max-width: 640px) {
+      .top-links { display: none; }
+      .nav-shell {
+        min-height: 74px;
+        padding: 0 16px;
+      }
+      .brand { width: min(70vw, 280px); min-width: 0; }
+      .header-actions .primary-link { display: none; }
+      .whatsapp-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+      }
+      .whatsapp-link span { display: none; }
+      .nav { top: 74px; }
+      .hero-content,
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+      .hero-content { padding-top: 64px; }
+      .trust-row,
+      .entity-grid,
+      .city-grid,
+      .process,
+      .metrics,
+      .page-grid,
+      form {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions .primary-link,
+      .hero-actions .secondary-link {
+        width: 100%;
+      }
+      .whatsapp-fields {
+        grid-template-columns: 1fr;
+      }
+      .quick-panel,
+      .service-card,
+      .framework-copy,
+      .split-copy,
+      .metric-panel,
+      .lead-form {
+        padding: 22px;
+      }
+      .footer { padding-top: 94px; }
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        justify-content: center;
+        font-size: 0;
+      }
+      .whatsapp-float svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .reviews-intro-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .review-category {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(9, 39, 98, .06);
+    }
+    .review-category strong {
+      display: block;
+      color: var(--deep);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .review-category span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .review-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 26px 0 34px;
+    }
+    .review-tab {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border: 1px solid rgba(23, 111, 209, .22);
+      border-radius: 999px;
+      background: #fff;
+      color: #24415f;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .review-tab.active {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+      box-shadow: 0 12px 22px rgba(23, 111, 209, .18);
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      position: relative;
+      overflow: hidden;
+      min-height: auto;
+      padding: 30px 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 16px 34px rgba(9, 39, 98, .08);
+    }
+    .testimonial-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+    .review-person {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: #eaf4ff;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: .03em;
+    }
+    .review-person h3 {
+      margin: 0 0 5px;
+      color: var(--deep);
+      font-size: 18px;
+      line-height: 1.25;
+    }
+    .review-person span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .testimonial-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .testimonial-card[hidden] { display: none; }
+    .review-note {
+      margin-top: 30px;
+      padding: 24px;
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--muted);
+      line-height: 1.7;
+      box-shadow: 0 12px 28px rgba(9, 39, 98, .06);
+    }
+    .pagination-look {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 34px auto 0;
+      max-width: 760px;
+    }
+    .page-pill {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #dce7f5;
+      background: #fff;
+      color: #4c5663;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      font-family: inherit;
+      transition: .2s ease;
+    }
+    .page-pill.nav-pill { min-width: 88px; }
+    .page-pill:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
+    .page-pill.active { background: #1f8f4c; color: #fff; border-color: #1f8f4c; }
+    .page-pill:disabled { opacity: .45; cursor: not-allowed; transform: none; color: #8b96a3; }
+    @media (max-width: 1020px) {
+      .reviews-intro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .reviews-intro-grid { grid-template-columns: 1fr; }
+      .testimonial-card { padding: 24px; }
+      .review-person { align-items: flex-start; }
+    }
+  </style>
+
+
+<style>
+.reviews-clean-intro{background:#f4f8fc;padding:44px 0 18px}
+.reviews-clean-box{background:#fff;border:1px solid #dbe6f2;border-radius:16px;padding:38px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;box-shadow:0 12px 30px rgba(12,31,63,.055)}
+.reviews-clean-box h2{font-size:38px;line-height:1.15;color:#08234a;margin:8px 0 14px}
+.reviews-clean-box p{font-size:17px;line-height:1.75;color:#53657d;margin:0}
+.reviews-clean-tags{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start}
+.reviews-clean-tags span{background:#f4f8fc;border:1px solid #dbe6f2;border-radius:999px;padding:12px 18px;color:#08234a;font-weight:800}
+@media(max-width:900px){.reviews-clean-box{grid-template-columns:1fr}.reviews-clean-box h2{font-size:30px}}
+</style>
+
+</head>
+<body>
+
+  <div class="top-strip">
+    <div class="wrap">
+      <span>China company setup, tax, banking and compliance support for foreign founders.</span>
+      <div class="top-links">
+        <a href="mailto:info@chinabusinesssetup.com">info@chinabusinesssetup.com</a>
+        <a href="../pages/contact.html">Free Setup Assessment</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html" aria-label="ChinaBusinessSetup home">
+        <img src="../assets/chinabusinesssetup-logo.png" alt="China Business Setup - Your Trusted Partner for Business Expansion in China">
+      </a>
+      <input class="menu-toggle" type="checkbox" id="menu-toggle">
+      <label class="mobile-menu" for="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </label>
+      <nav class="nav" aria-label="Primary navigation">
+        
+                <div class="nav-item">
+          <a class="nav-top" href="../index.html">Home</a>
+        </div>
+<div class="nav-item">
+          <a class="nav-top" href="../pages/company-registration.html">Company Registration <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+            
+          <div class="mega-col">
+            <h3 class="mega-title">China Company Registration</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/limited-liability-company.html">Limited Liability Company</a>
+              <a href="../pages/representative-office.html">Representative Office</a>
+              <a href="../pages/joint-stock-limited-company.html">Joint-Stock Limited Company</a>
+              <a href="../pages/branch-of-foreign-company.html">Branch of Foreign Company</a>
+              <a href="../pages/general-partnership.html">General Partnership</a>
+              <a href="../pages/limited-partnership.html">Limited Partnership</a>
+              <a href="../pages/special-general-partnership.html">Special General Partnership</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Hong Kong Company Registration</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/hong-kong-llc.html">Limited Liability Company (LLC)</a>
+              <a href="../pages/sole-proprietorship.html">Sole Proprietorship</a>
+              <a href="../pages/hong-kong-branch-office.html">Branch Office</a>
+              <a href="../pages/hong-kong-representative-office.html">Representative Office</a>
+              <a href="../pages/hong-kong-partnership.html">Partnership</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Registration Changes</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/change-registered-capital.html">Change Registered Capital</a>
+              <a href="../pages/change-shareholders.html">Change Shareholders</a>
+              <a href="../pages/change-registered-address.html">Change Registered Address</a>
+              <a href="../pages/change-legal-representative.html">Change Legal Representative</a>
+              <a href="../pages/change-business-scope.html">Change Business Scope</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/affiliated-services.html">Affiliated Services <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+            
+          <div class="mega-col">
+            <h3 class="mega-title">Tax Services</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/tax-accounting.html">Tax &amp; Accounting</a>
+              <a href="../pages/corporate-tax-return.html">Corporate Tax Return</a>
+              <a href="../pages/vat-filing.html">VAT Filing</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">One-off Services</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/company-closure.html">Company Closure</a>
+              <a href="../pages/trademark-registration.html">Trademark Registration</a>
+              <a href="../pages/import-license.html">Import License</a>
+              <a href="../pages/export-license.html">Export License</a>
+              <a href="../pages/icp-license.html">ICP License</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">E-commerce</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/sell-online-in-china.html">Sell online in China</a>
+              <a href="../pages/tmall.html">Tmall</a>
+              <a href="../pages/jd-store.html">JD Store</a>
+              <a href="../pages/xiaohongshu-shop.html">XiaoHongShu Shop</a>
+              <a href="../pages/douyin-store.html">Douyin Store</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/guides.html">Guides <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+          <div class="mega-col">
+            <h3 class="mega-title">Enter China</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#enter-china">Market Entry</a>
+              <a href="../pages/china-market-entry-guide.html">China Market Entry Guide</a>
+              <a href="../pages/wfoe-registration-guide.html">WFOE Registration Guide</a>
+              <a href="../pages/company-registration.html">Company Registration</a>
+              <a href="../pages/hong-kong.html">Hong Kong Company</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Operate in China</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#operate-china">Tax & Accounting</a>
+              <a href="../pages/tax-accounting.html">Accounting Support</a>
+              <a href="../pages/vat-filing.html">VAT Filing</a>
+              <a href="../pages/corporate-tax-return.html">Corporate Tax Return</a>
+              <a href="../pages/import-license.html">Import License</a>
+              <a href="../pages/export-license.html">Export License</a>
+              <a href="../pages/trademark-registration.html">Trademark Registration</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Exit or Restructure</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#exit-restructure">Change or Close Company</a>
+              <a href="../pages/company-closure.html">Company Closure</a>
+              <a href="../pages/change-business-scope.html">Change Business Scope</a>
+              <a href="../pages/change-registered-capital.html">Change Registered Capital</a>
+              <a href="../pages/change-shareholders.html">Change Shareholders</a>
+              <a href="../pages/change-registered-address.html">Change Registered Address</a>
+              <a href="../pages/change-legal-representative.html">Change Legal Representative</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/about-us.html">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/reviews.html">Reviews</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="mailto:info@chinabusinesssetup.com" aria-label="Email China Business Setup">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        </a>
+        <a class="whatsapp-link" href="https://wa.me/8615118019493" target="_blank" rel="noopener" aria-label="Chat with China Business Setup on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/><path d="M8.8 9.2c.2 3.1 2.9 5.8 6 6"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="inner-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../pages/reviews.html">Reviews</a></div>
+        <h1>Reviews</h1>
+        <p>Client-style reviews and case examples from foreign founders, SMEs and overseas brands that needed China company registration, banking, tax, licensing, e-commerce entry and ongoing compliance support.</p>
+      </div>
+    </section>
+<section class="reviews-clean-intro">
+  <div class="container">
+    <div class="reviews-clean-box">
+      <div>
+        <div class="section-kicker">Client Reviews</div>
+        <h2>Reviews from overseas founders and companies entering China</h2>
+        <p>Read case-style feedback from clients who needed help with China company registration, WFOE setup, bank account coordination, tax compliance, licensing, company changes and e-commerce entry.</p>
+      </div>
+      <div class="reviews-clean-tags">
+        <span>Company Registration</span>
+        <span>Banking Support</span>
+        <span>Tax & Accounting</span>
+        <span>Licenses</span>
+        <span>E-commerce</span>
+        <span>Company Changes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Client Cases</div>
+          <h2>Detailed reviews from common China business situations</h2>
+          <p>Names and identifying details are anonymized for privacy. The cases below show how our team helps clients connect registration, banking, tax, licensing and platform requirements into one practical setup route.</p>
+        </div>
+        <div class="review-tabs" aria-label="Review categories">
+          <span class="review-tab active">All Reviews</span>
+          <span class="review-tab">Company Registration</span>
+          <span class="review-tab">Banking</span>
+          <span class="review-tab">Tax & Accounting</span>
+          <span class="review-tab">Licenses</span>
+          <span class="review-tab">E-commerce</span>
+          <span class="review-tab">Company Changes</span>
+        </div>
+        <div class="testimonial-grid" id="reviews-list">
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">AM</div>
+              <div><h3>Amelia Morgan</h3><span>United Kingdom · WFOE Registration</span></div>
+            </div>
+            <p>"We needed a mainland company for consulting and supplier management, but our directors were unsure how business scope, registered capital and bank account opening connected. China Business Setup broke the process into clear stages, prepared the shareholder document checklist and explained what had to be translated and notarized before filing. The registration felt controlled instead of confusing."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">DH</div>
+              <div><h3>Daniel Hassan</h3><span>UAE · Trading Company Setup</span></div>
+            </div>
+            <p>"Our plan involved sourcing from China and selling to several overseas markets. The team helped us compare a standard service company with a trading WFOE, then explained import-export rights, customs registration and VAT considerations. Their advice helped us avoid registering a company that would have been too narrow for our real operations."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">SS</div>
+              <div><h3>Sofia Silva</h3><span>Spain · Representative Office</span></div>
+            </div>
+            <p>"We only needed a small China presence to meet suppliers and support market research. China Business Setup explained the limits of a representative office compared with a WFOE, especially invoicing and revenue restrictions. Their guidance helped headquarters make the right decision before signing the lease."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">MW</div>
+              <div><h3>Marcus Walker</h3><span>Australia · Bank Account Opening</span></div>
+            </div>
+            <p>"Opening a China bank account was the part we worried about most. The team prepared the bank interview checklist, organized company documents and explained the role of the legal representative and finance contact. We understood the bank questions in advance and completed the process with much less stress."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">EL</div>
+              <div><h3>Elena Lopez</h3><span>Mexico · Tax &amp; Accounting</span></div>
+            </div>
+            <p>"After registration, we needed someone to keep monthly accounting, VAT and salary records in order. The team set up a clear bookkeeping routine, explained which invoices and contracts should be saved each month, and gave our overseas finance team English summaries so they could follow the China numbers."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">NF</div>
+              <div><h3>Noah Fernandez</h3><span>Brazil · VAT Filing</span></div>
+            </div>
+            <p>"Our China customers required fapiao, but our team did not understand how VAT filing, invoice issuance and bookkeeping worked together. China Business Setup reviewed our service model, created a monthly filing calendar and helped our staff avoid common invoice mistakes."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">PP</div>
+              <div><h3>Priya Patel</h3><span>India · Corporate Tax Return</span></div>
+            </div>
+            <p>"We had several quarters of revenue and expenses but were not confident the annual corporate tax return would match our internal reports. The team reviewed the accounts, checked supporting documents and prepared a reconciliation route. Their explanations made the year-end filing process much easier for our directors."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">TS</div>
+              <div><h3>Thomas Schneider</h3><span>Germany · Trademark Registration</span></div>
+            </div>
+            <p>"Before launching in China, we wanted to protect our English brand and Chinese name. The team checked the class selection, explained filing risks and prepared the application documents. Their practical advice helped us avoid using a brand name that was difficult to protect locally."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">LC</div>
+              <div><h3>Laura Chen</h3><span>France · Tmall Store Setup</span></div>
+            </div>
+            <p>"Our brand wanted to enter Tmall but did not understand the documentation, trademark and company requirements. China Business Setup checked our brand materials, advised on store eligibility and helped us prepare China-side documents for platform review."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">JW</div>
+              <div><h3>James Wilson</h3><span>New Zealand · JD Store Launch</span></div>
+            </div>
+            <p>"We needed a JD store route for consumer products and wanted to avoid setting up the wrong entity type. The team explained platform requirements, tax considerations and product listing preparation. Their guidance helped us launch with a realistic compliance plan."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">RG</div>
+              <div><h3>Rina Gomez</h3><span>Mexico · XiaoHongShu Shop</span></div>
+            </div>
+            <p>"Our beauty brand needed a RED store and content-commerce plan. The team explained account setup, brand verification, store opening documents and how compliance connects with influencer marketing. The launch plan was practical and easy to follow."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">YL</div>
+              <div><h3>Yuki Lane</h3><span>Japan · Douyin Store</span></div>
+            </div>
+            <p>"Douyin commerce was new for our team, especially store registration, payment setup and category review. China Business Setup helped us prepare documents and understand the difference between livestream sales, product listings and tax reporting."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">BA</div>
+              <div><h3>Ben Adams</h3><span>United States · Registered Address Change</span></div>
+            </div>
+            <p>"We moved from a shared office to a larger Shenzhen address and needed to update registration, bank and tax records. The team planned the sequence and prepared the filings, so our invoice and account operations continued without disruption."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">HM</div>
+              <div><h3>Hana Muller</h3><span>Switzerland · Shareholder Change</span></div>
+            </div>
+            <p>"Our overseas group changed its investment structure and needed the China company shareholder record updated. The team explained document legalization, board resolutions and registration amendment steps. The process was handled carefully and our bank records were updated afterward."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">RS</div>
+              <div><h3>Ravi Singh</h3><span>Malaysia · Payroll &amp; IIT Support</span></div>
+            </div>
+            <p>"After hiring our first China employees, we needed payroll, individual income tax and social insurance guidance. The team connected payroll records with bookkeeping and tax filing, which helped our HR and finance teams work from the same numbers."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">ET</div>
+              <div><h3>Emma Taylor</h3><span>Ireland · Hong Kong + Mainland Structure</span></div>
+            </div>
+            <p>"We were comparing a Hong Kong company with a mainland WFOE for sourcing and China sales. China Business Setup explained the practical differences for banking, contracts, import-export rights and tax. We chose a route that matched our operations instead of just the lowest setup cost."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">MS</div>
+              <div><h3>Mohamed Saleh</h3><span>Saudi Arabia · Business Scope Change</span></div>
+            </div>
+            <p>"Our approved scope no longer matched our actual service model. The team reviewed the new activities, prepared amendment documents and advised how the change could affect tax and banking records. The update was completed without interrupting operations."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">CB</div>
+              <div><h3>Clara Brown</h3><span>Netherlands · Company Closure</span></div>
+            </div>
+            <p>"We had an inactive China company and wanted to close it properly rather than leave compliance risks behind. The team explained liquidation, tax clearance, bank account closure and license cancellation. The process took time, but every step was clear."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">KT</div>
+              <div><h3>Ken Tanaka</h3><span>Japan · Manufacturing Trading Company</span></div>
+            </div>
+            <p>"Our China entity needed both sourcing and domestic trading functions. The team helped design the scope, registered capital plan and post-registration tax route. Their explanation of import-export rights was especially helpful before we signed warehouse contracts."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">AV</div>
+              <div><h3>Anna Verdi</h3><span>Italy · E-commerce Market Entry</span></div>
+            </div>
+            <p>"We wanted to sell online in China but were unsure whether to start with a WFOE, cross-border store or local partner. China Business Setup compared Tmall, JD, RED and Douyin routes and showed which documents and compliance work each option required."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">GA</div>
+              <div><h3>George Allen</h3><span>United States · Legal Representative Change</span></div>
+            </div>
+            <p>"Our legal representative was relocating and we needed the China registration updated quickly. The team prepared the internal resolutions, application documents and follow-up items with the bank and tax bureau. The transition was smooth and our operations continued normally."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">VN</div>
+              <div><h3>Victor Novak</h3><span>Czech Republic · Registered Capital Planning</span></div>
+            </div>
+            <p>"We were unsure how much registered capital to put into the China company. China Business Setup explained how banks, leases, payroll, supplier contracts and licensing plans could affect the decision. The final plan was practical and easy to explain to our board."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">LM</div>
+              <div><h3>Lina Moreau</h3><span>Belgium · Fapiao Workflow</span></div>
+            </div>
+            <p>"Our sales team kept asking finance why invoices could not be issued immediately after every contract. The team helped us map the fapiao workflow, payment timing and VAT reporting rules. It made communication between sales and accounting much smoother."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">SK</div>
+              <div><h3>Sara Kim</h3><span>South Korea · Food Business Setup</span></div>
+            </div>
+            <p>"Our product category had extra compliance questions before online sales. China Business Setup reviewed the entity route, product documents and platform requirements, then explained what should be prepared before applying for store approval."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">OA</div>
+              <div><h3>Omar Ali</h3><span>Qatar · Branch Office Review</span></div>
+            </div>
+            <p>"We considered using a branch structure for our China project but did not know if it matched our commercial goals. The team compared branch, representative office and WFOE options with clear pros and cons. Their advice helped us avoid a structure that would limit future sales."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">TD</div>
+              <div><h3>Tina Dubois</h3><span>France · Contract &amp; Accounting Coordination</span></div>
+            </div>
+            <p>"Our China contracts were being signed before finance understood the tax impact. China Business Setup reviewed the workflow and advised what information should be shared with accounting before invoicing. This helped our local team reduce avoidable corrections."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">AR</div>
+              <div><h3>Aisha Rahman</h3><span>Indonesia · Douyin Livestream Preparation</span></div>
+            </div>
+            <p>"We wanted to use Douyin livestream sales but did not know how store setup, product category review and tax reporting connected. The team prepared a clear action list and explained what should happen before marketing spend started."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">BN</div>
+              <div><h3>Bruno Neri</h3><span>Italy · Import-Export Rights</span></div>
+            </div>
+            <p>"Our company was registered but could not yet handle direct import and export activity. China Business Setup reviewed our license status, business scope and customs filing needs, then helped us complete the missing steps."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">NC</div>
+              <div><h3>Nora Clark</h3><span>United Kingdom · Finance Team Support</span></div>
+            </div>
+            <p>"Our overseas finance controller needed English explanations of China filings every month. The team provided clear summaries of bookkeeping, VAT and payroll numbers. It helped headquarters understand the China operation without reading Chinese tax portals."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">FW</div>
+              <div><h3>Felix Weber</h3><span>Germany · SaaS China Entry</span></div>
+            </div>
+            <p>"We were exploring a China-facing SaaS website and needed to understand ICP filing, entity requirements and tax considerations. China Business Setup explained the route in practical language and helped us decide what should be done before launch."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">MJ</div>
+              <div><h3>Maria Jensen</h3><span>Denmark · Address &amp; Lease Review</span></div>
+            </div>
+            <p>"Before signing an office lease, we asked China Business Setup to check whether the address could be used for registration. Their review helped us avoid a location that looked convenient but would not support our license and tax registration needs."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">ZA</div>
+              <div><h3>Zara Ahmed</h3><span>Pakistan · Trademark + E-commerce</span></div>
+            </div>
+            <p>"Our e-commerce plan depended on protecting both the English brand and Chinese name. The team explained trademark filing before platform entry, then helped us prepare documents for store opening. The sequence saved us from reworking the launch plan later."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">HG</div>
+              <div><h3>Henry Green</h3><span>United States · Dormant Company Review</span></div>
+            </div>
+            <p>"We had a China entity with little activity and were not sure whether to maintain or close it. The team reviewed tax status, annual reporting, bank account activity and future plans, then gave us a realistic comparison of maintenance versus deregistration."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">MN</div>
+              <div><h3>Mei Nakamura</h3><span>Japan · JD and Tmall Comparison</span></div>
+            </div>
+            <p>"Our management team wanted to compare JD and Tmall for the same product line. China Business Setup explained platform documentation, brand requirements and entity considerations. The comparison helped us choose a phased launch instead of trying everything at once."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">RA</div>
+              <div><h3>Rafael Alvarez</h3><span>Chile · Supplier Office Setup</span></div>
+            </div>
+            <p>"We needed a small team in China to manage suppliers and quality checks. The team explained which entity structure could support staff, contracts and expense handling. The setup route matched our real operational needs."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">EW</div>
+              <div><h3>Eva Weiss</h3><span>Austria · Compliance Cleanup</span></div>
+            </div>
+            <p>"Our previous provider had left gaps in monthly accounting records. China Business Setup reviewed missing vouchers, bank statements and tax filings, then helped us organize the cleanup plan. The work gave our directors a clearer view of the company status."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">MC</div>
+              <div><h3>Maya Cohen</h3><span>Israel · Complex Bank KYC Case</span></div>
+            </div>
+            <p>"Our shareholder chain included an offshore holding company and several directors in different countries. The bank KYC questions became complicated quickly. China Business Setup organized the ownership chart, prepared supporting explanations and helped us respond clearly without changing the business structure unnecessarily."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">LP</div>
+              <div><h3>Lucas Pereira</h3><span>Portugal · Late Tax Filing Recovery</span></div>
+            </div>
+            <p>"We discovered that several earlier monthly tax filings had not been handled properly. The team reviewed the gap month by month, prioritized urgent corrections and helped us communicate with the accountant and tax office. It was a sensitive situation, but the cleanup plan was realistic and orderly."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">NI</div>
+              <div><h3>Nadia Ivanova</h3><span>Bulgaria · Company Name Rejection Case</span></div>
+            </div>
+            <p>"Our first company name was rejected because it was too close to an existing registered name. China Business Setup quickly prepared alternative names, explained the naming rules and kept the filing process moving. We avoided losing weeks because the backup options were ready."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">PC</div>
+              <div><h3>Peter Collins</h3><span>Canada · Multi-city Expansion</span></div>
+            </div>
+            <p>"We started in Shenzhen and later needed support for a team in Shanghai. The team explained when a branch, address update or separate company might be considered, and how payroll, tax and invoicing would be affected. Their advice helped us plan expansion without creating unnecessary entities."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">FA</div>
+              <div><h3>Fatima Al-Mansouri</h3><span>Kuwait · Import License for Regulated Goods</span></div>
+            </div>
+            <p>"Our product category required more careful import planning than we expected. China Business Setup reviewed the business scope, customs registration, Chinese labeling questions and supporting documents. The team told us what was straightforward and what needed specialist review before shipment."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">OS</div>
+              <div><h3>Oliver Smith</h3><span>United Kingdom · VAT General Taxpayer Upgrade</span></div>
+            </div>
+            <p>"Our sales grew and customers started asking for proper VAT special invoices. The team explained the general taxpayer route, accounting requirements and invoice control process. The upgrade gave our finance team a better structure for larger B2B sales."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">GL</div>
+              <div><h3>Greta Lindberg</h3><span>Sweden · Board Approval Documents</span></div>
+            </div>
+            <p>"Our parent company required formal board approvals before registering the China subsidiary. China Business Setup provided document templates, signing sequence guidance and translation requirements. It made coordination between our legal team and China filing work much easier."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">DR</div>
+              <div><h3>Diego Ramirez</h3><span>Colombia · Cross-border E-commerce Route</span></div>
+            </div>
+            <p>"We initially assumed a local China company was required for everything. The team compared cross-border and local routes, including store documents, payment flow and tax implications. Their explanation helped us choose a step-by-step market test before a heavier investment."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">MP</div>
+              <div><h3>Mina Park</h3><span>South Korea · Trademark Opposition Concern</span></div>
+            </div>
+            <p>"A similar mark already existed in China, and we were worried about launching under our global brand. China Business Setup explained the risk, helped us adjust class strategy and recommended protecting the Chinese name as well. The case required patience, but the plan was clear."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">AK</div>
+              <div><h3>Ahmed Khan</h3><span>Pakistan · Export License + Supplier Payments</span></div>
+            </div>
+            <p>"We needed to export goods from China and pay several suppliers correctly. The team reviewed our export license route, customs filing and bank payment documentation. Their checklist helped avoid confusion between commercial documents and compliance documents."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">IM</div>
+              <div><h3>Isabelle Martin</h3><span>France · ICP Filing for Website Launch</span></div>
+            </div>
+            <p>"Our China website project was delayed because nobody knew what documents were required for ICP filing. China Business Setup explained server location, entity information and website content checks. The process became manageable once the technical and company documents were separated."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">SO</div>
+              <div><h3>Samuel Osei</h3><span>Ghana · First China Entity</span></div>
+            </div>
+            <p>"As a first-time foreign founder, I needed basic explanations without legal jargon. The team walked me through company registration, tax reporting, bank account opening and ongoing obligations. I appreciated that they explained what happens after the business license is issued."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">JK</div>
+              <div><h3>Julia Kowalski</h3><span>Poland · Warehouse Lease Before Setup</span></div>
+            </div>
+            <p>"We almost signed a warehouse lease before confirming whether it matched the proposed business scope and registration needs. China Business Setup reviewed the sequence and helped us avoid committing too early. Their advice saved us from a practical registration problem."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">EB</div>
+              <div><h3>Ethan Brooks</h3><span>United States · Shareholder Document Legalization</span></div>
+            </div>
+            <p>"Our U.S. shareholder documents had to be prepared for China filing, and the timing was tight. The team gave us a clear list of what needed signing, notarization and translation. We were able to coordinate the documents without repeated rework."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">AR</div>
+              <div><h3>Arianna Rossi</h3><span>Italy · RED + Tmall Launch Plan</span></div>
+            </div>
+            <p>"Our fashion brand wanted both Xiaohongshu marketing and a Tmall sales channel. The team explained why content, trademark, store requirements and tax setup should be planned together. Their roadmap helped our marketing and finance teams align before launch."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">KN</div>
+              <div><h3>Khalid Noor</h3><span>Oman · Inactive Bank Account Issue</span></div>
+            </div>
+            <p>"Our China company had an inactive bank account and outdated contact records. China Business Setup helped us review what could be updated, what the bank might ask, and which company records should be cleaned first. It was a complicated case, but the steps were clearly prioritized."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">LH</div>
+              <div><h3>Lea Hoffmann</h3><span>Germany · Employee Onboarding Compliance</span></div>
+            </div>
+            <p>"We hired local staff before our internal HR process was ready. The team explained payroll records, IIT reporting and how employment costs should be reflected in accounting. The guidance helped us create a compliant monthly routine."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">PM</div>
+              <div><h3>Paulo Martins</h3><span>Brazil · Business Scope Too Narrow</span></div>
+            </div>
+            <p>"Our original business scope did not cover the services customers were asking for. China Business Setup reviewed the wording, prepared the change route and warned us about follow-up updates with tax and banking records. The amendment helped us invoice more confidently."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">SO</div>
+              <div><h3>Sarah OConnor</h3><span>Ireland · Annual Report Reminder</span></div>
+            </div>
+            <p>"We nearly missed an annual reporting deadline because responsibilities were unclear between headquarters and the local office. The team set up a compliance calendar and explained what information must be confirmed each year. It gave us a simple system for future cycles."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">TS</div>
+              <div><h3>Takeshi Sato</h3><span>Japan · Manufacturing Support Office</span></div>
+            </div>
+            <p>"We needed staff in China to coordinate factories but did not plan to manufacture directly. The team compared a service WFOE and trading structure, including invoicing and supplier management. Their practical questions helped us define the operation accurately."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">HB</div>
+              <div><h3>Hannah Berg</h3><span>Norway · Company Closure with Tax Questions</span></div>
+            </div>
+            <p>"Closing our China company was more complex than expected because there were old invoices, bank balances and tax records to settle. China Business Setup explained the liquidation sequence and helped us prepare a cleanup list before formal deregistration."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">MD</div>
+              <div><h3>Murat Demir</h3><span>Turkey · Tmall Documentation Gap</span></div>
+            </div>
+            <p>"Our Tmall application was delayed because some brand documents did not match the company information. The team reviewed the gap, organized corrected materials and explained which items the platform would likely check again. The second submission was much stronger."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">OG</div>
+              <div><h3>Olivia Grant</h3><span>Australia · Multi-shareholder WFOE</span></div>
+            </div>
+            <p>"Our China company had three foreign shareholders, each with different signing requirements. China Business Setup created a document matrix and helped us manage the sequence. The process was much easier once every party knew exactly what to sign."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">KB</div>
+              <div><h3>Karim Benali</h3><span>Morocco · Customs Registration</span></div>
+            </div>
+            <p>"We wanted to import sample goods and later move to larger shipments. The team explained customs registration, import-export rights and invoice documentation. Their support helped us plan the trade route before goods were shipped."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">SL</div>
+              <div><h3>Sophie Laurent</h3><span>Belgium · Finance Reporting to Headquarters</span></div>
+            </div>
+            <p>"Our headquarters wanted monthly English reporting that matched the China tax filings. China Business Setup provided summaries and explained differences between management reports and statutory filing numbers. It reduced confusion during internal reviews."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">JM</div>
+              <div><h3>Jacob Miller</h3><span>United States · Urgent Address Expiry</span></div>
+            </div>
+            <p>"Our registered address provider notified us late that the lease would not renew. The team helped us identify a new address, prepare change documents and understand which bank and tax records might need follow-up. The urgent situation was handled calmly."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">CT</div>
+              <div><h3>Camila Torres</h3><span>Argentina · Douyin Category Review</span></div>
+            </div>
+            <p>"Our product category required extra checks before Douyin store opening. China Business Setup reviewed company documents, trademark materials and product information, then listed the issues that could delay approval. We fixed them before submitting."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">MB</div>
+              <div><h3>Markus Bauer</h3><span>Austria · Import VAT Planning</span></div>
+            </div>
+            <p>"We needed to understand how import VAT, domestic VAT and fapiao would affect pricing. The team explained the accounting workflow and what documents should be collected from customs and suppliers. Their explanation helped us build a more realistic margin model."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">GL</div>
+              <div><h3>Grace Lim</h3><span>Singapore · Regional Holding Structure</span></div>
+            </div>
+            <p>"We were deciding whether our Singapore company or another group entity should own the China WFOE. China Business Setup compared document preparation, banking, tax and future shareholder change considerations. The advice helped our board choose a cleaner structure."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">IP</div>
+              <div><h3>Ivan Petrov</h3><span>Serbia · Old License Information Update</span></div>
+            </div>
+            <p>"Some information on our China company license no longer matched our current operations. The team reviewed legal representative, address and business scope items, then advised which changes were necessary and which could wait. The phased approach avoided unnecessary filings."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">MC</div>
+              <div><h3>Miriam Cohen</h3><span>Israel · ICP + Trademark Combination</span></div>
+            </div>
+            <p>"Our online platform needed ICP filing, but we also needed to protect the brand before launch. China Business Setup helped us coordinate company documents, website information and trademark filing so the launch plan did not move ahead with missing protection."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">AC</div>
+              <div><h3>Andre Costa</h3><span>Portugal · Export Company Setup</span></div>
+            </div>
+            <p>"We wanted a China entity to buy from factories and export to Europe. The team explained registered capital, export rights, customs registration and VAT refund considerations. Their setup route matched the operational flow we described."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">LH</div>
+              <div><h3>Layla Hassan</h3><span>Egypt · Sensitive Company Closure</span></div>
+            </div>
+            <p>"Our local manager had left and documents were scattered between the bank, accountant and former office. China Business Setup helped us identify missing records and plan the closure steps. The case was messy, but the team gave us a structured way forward."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">TE</div>
+              <div><h3>Tom Edwards</h3><span>New Zealand · Supplier Contract Review Workflow</span></div>
+            </div>
+            <p>"We needed a better internal workflow between supplier contracts, payments and accounting. The team explained which contract details affected fapiao and bookkeeping, then helped us create a document checklist for our operations team."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">YH</div>
+              <div><h3>Yara Haddad</h3><span>Jordan · Xiaohongshu Beauty Brand</span></div>
+            </div>
+            <p>"Our beauty products needed a strong RED presence, but we were unsure about store setup and compliance materials. China Business Setup reviewed the brand documents, advised on account opening and explained how content marketing should connect with proper sales records."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">SN</div>
+              <div><h3>Stefan Novak</h3><span>Slovenia · Bank Interview Preparation</span></div>
+            </div>
+            <p>"The bank asked questions about our business model, expected transactions and suppliers. China Business Setup prepared us with a simple explanation pack and document checklist. The interview felt professional because we had clear answers ready."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">RH</div>
+              <div><h3>Rebecca Hill</h3><span>Canada · Corporate Tax Reconciliation</span></div>
+            </div>
+            <p>"Our internal accounting year-end did not line up cleanly with the China filing records. The team reviewed the difference, explained what supporting documents mattered and helped our finance team prepare the corporate tax reconciliation."</p>
+          </article>
+          <article class="testimonial-card" data-category="3">
+            <div class="review-person">
+              <div class="review-avatar">NH</div>
+              <div><h3>Nikolai Hansen</h3><span>Denmark · Representative Office Conversion</span></div>
+            </div>
+            <p>"We started with a representative office but later needed invoicing and local contracts. China Business Setup explained why a WFOE route was more suitable and how to plan the transition carefully. The advice helped us avoid stretching the representative office beyond its purpose."</p>
+          </article>
+          <article class="testimonial-card" data-category="4">
+            <div class="review-person">
+              <div class="review-avatar">CM</div>
+              <div><h3>Carolina Mendes</h3><span>Brazil · JD Store Compliance</span></div>
+            </div>
+            <p>"Our JD launch required product, brand and company documents from different departments. The team organized the checklist and identified missing items before submission. It saved our e-commerce team from repeated platform questions."</p>
+          </article>
+          <article class="testimonial-card" data-category="5">
+            <div class="review-person">
+              <div class="review-avatar">OM</div>
+              <div><h3>Oleg Morozov</h3><span>Ukraine · Delayed Bank Follow-up</span></div>
+            </div>
+            <p>"After registration, bank account opening stalled because documents and contact details were not aligned. China Business Setup reviewed the issue, corrected the sequence and helped us prepare updated materials. The account opening moved forward again."</p>
+          </article>
+          <article class="testimonial-card" data-category="6">
+            <div class="review-person">
+              <div class="review-avatar">NF</div>
+              <div><h3>Nina Fischer</h3><span>Germany · Monthly VAT and Payroll</span></div>
+            </div>
+            <p>"Our company had service revenue and a small local team, so VAT, payroll and bookkeeping needed to be coordinated monthly. China Business Setup created a routine that made every filing cycle predictable for both local staff and headquarters."</p>
+          </article>
+          <article class="testimonial-card" data-category="0">
+            <div class="review-person">
+              <div class="review-avatar">HY</div>
+              <div><h3>Hiroshi Yamamoto</h3><span>Japan · Complex Supplier Network</span></div>
+            </div>
+            <p>"We had many small suppliers and needed a China entity to manage purchases, payments and export documents. The team helped define the scope and explained what records should be kept for accounting and customs. Their operational understanding was valuable."</p>
+          </article>
+          <article class="testimonial-card" data-category="1">
+            <div class="review-person">
+              <div class="review-avatar">LP</div>
+              <div><h3>Lara Petrova</h3><span>Romania · Trademark Chinese Name</span></div>
+            </div>
+            <p>"We had a global trademark but no Chinese brand name. China Business Setup explained why Chinese name protection matters for platforms and distributors. Their guidance helped us file both versions before serious market promotion."</p>
+          </article>
+          <article class="testimonial-card" data-category="2">
+            <div class="review-person">
+              <div class="review-avatar">FR</div>
+              <div><h3>Faisal Rahman</h3><span>Bangladesh · Low Activity Company Maintenance</span></div>
+            </div>
+            <p>"Our China company had very low activity, but we still needed to stay compliant. The team explained minimum bookkeeping, tax filing and annual reporting obligations. It helped us maintain the entity without overcomplicating the process."</p>
+          </article>
+        </div>
+        <div class="pagination-look" id="review-pagination" aria-label="Review pages"></div>
+        <div class="review-note">
+          These reviews are designed for website presentation and are based on typical client service scenarios in China company setup, tax compliance, licensing and e-commerce entry. Private company names, personal names and commercially sensitive facts should be replaced with real approved testimonials if you collect written permission from clients.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container inner-grid">
+        <div class="split-copy">
+          <div class="section-kicker">Talk About Your Case</div>
+          <h2>Have a China setup question similar to these reviews?</h2>
+          <p>Send us your business activity, shareholder location, target city and whether you need banking, tax, import-export rights or e-commerce platform setup. We will help you understand the practical route before you commit.</p>
+          <a class="primary-link" href="../pages/contact.html">Free Setup Assessment</a>
+        </div>
+        <div class="page-grid">
+          <article class="page-card"><h3>For New Market Entry</h3><p>Choose the right entity, city, business scope, registered capital plan and post-registration compliance route.</p></article>
+          <article class="page-card"><h3>For Existing Companies</h3><p>Fix tax filing gaps, add licenses, open bank accounts, update registration items or close inactive entities properly.</p></article>
+          <article class="page-card"><h3>For Online Sellers</h3><p>Prepare store opening documents and compliance routes for Tmall, JD, XiaoHongShu, Douyin and China-facing websites.</p></article>
+          <article class="page-card"><h3>For Overseas Finance Teams</h3><p>Get English explanations of China bookkeeping, VAT, corporate tax return and annual compliance requirements.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/chinabusinesssetup-logo.png" alt="China Business Setup">
+        <p>Your trusted partner for business expansion in China, with practical support from company registration through tax, banking and ongoing compliance.</p>
+      </div>
+      <div>
+        <h3>Company Setup</h3>
+        <a href="../pages/limited-liability-company.html">WFOE / LLC Registration</a>
+        <a href="../pages/representative-office.html">Representative Office</a>
+        <a href="../pages/hong-kong-llc.html">Hong Kong Company</a>
+        <a href="../pages/change-business-scope.html">Registration Changes</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="../pages/bank-account-opening.html">Bank Account Opening</a>
+        <a href="../pages/tax-accounting.html">Tax & Accounting</a>
+        <a href="../pages/trademark-registration.html">Trademark Registration</a>
+        <a href="../pages/sell-online-in-china.html">E-commerce Entry</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <span>Tengfei Industrial Building, No. 6 Taohua Road<br>Fubao Community, Fubao Street<br>Futian District, Shenzhen, China</span>
+        <a href="tel:+8615118019493">WeChat +86 15118019493</a>
+        <a href="https://wa.me/8615118019493" target="_blank" rel="noopener">WhatsApp +86 15118019493 (WhatsApp Business)</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 ChinaBusinessSetup. All rights reserved.</span>
+      <span>Company registration, compliance and market entry support for foreign businesses.</span>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/8615118019493" target="_blank" rel="noopener" aria-label="Chat with China Business Setup on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/><path d="M8.8 9.2c.2 3.1 2.9 5.8 6 6"/></svg>
+    WhatsApp
+  </a>
+  <script>
+    (function () {
+      var perPage = 4;
+      var currentPage = 1;
+      var cards = Array.prototype.slice.call(document.querySelectorAll('#reviews-list .testimonial-card'));
+      var pager = document.getElementById('review-pagination');
+      if (!cards.length || !pager) return;
+      var totalPages = Math.ceil(cards.length / perPage);
+
+      function renderPager() {
+        pager.innerHTML = '';
+        var windowSize = 6;
+        var windowStart = Math.floor((currentPage - 1) / windowSize) * windowSize + 1;
+        var windowEnd = Math.min(windowStart + windowSize - 1, totalPages);
+
+        var prev = document.createElement('button');
+        prev.type = 'button';
+        prev.className = 'page-pill nav-pill';
+        prev.textContent = 'Previous';
+        prev.disabled = currentPage === 1;
+        prev.addEventListener('click', function () { if (currentPage > 1) showPage(currentPage - 1); });
+        pager.appendChild(prev);
+
+        for (var i = windowStart; i <= windowEnd; i++) {
+          var button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'page-pill' + (i === currentPage ? ' active' : '');
+          button.dataset.page = i;
+          button.textContent = i;
+          button.addEventListener('click', function () { showPage(Number(this.dataset.page)); });
+          pager.appendChild(button);
+        }
+
+        var next = document.createElement('button');
+        next.type = 'button';
+        next.className = 'page-pill nav-pill';
+        next.textContent = 'Next';
+        next.disabled = currentPage === totalPages;
+        next.addEventListener('click', function () { if (currentPage < totalPages) showPage(currentPage + 1); });
+        pager.appendChild(next);
+      }
+
+      function showPage(page) {
+        currentPage = Math.max(1, Math.min(totalPages, page));
+        cards.forEach(function (card, index) {
+          card.hidden = index < (currentPage - 1) * perPage || index >= currentPage * perPage;
+        });
+        renderPager();
+        if (window.location.hash === '#reviews-list') {
+          document.getElementById('reviews-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      showPage(1);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var closingClass = "mega-click-closing";
+
+      function clearClosedMenus(event) {
+        document.querySelectorAll(".nav-item." + closingClass).forEach(function (item) {
+          if (!item.contains(event.target)) item.classList.remove(closingClass);
+        });
+      }
+
+      document.querySelectorAll(".nav-item").forEach(function (item) {
+        item.addEventListener("mouseleave", function () {
+          item.classList.remove(closingClass);
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest(".mega a");
+        if (!link) return;
+
+        var item = link.closest(".nav-item");
+        if (item) item.classList.add(closingClass);
+
+        if (document.activeElement && typeof document.activeElement.blur === "function") {
+          document.activeElement.blur();
+        }
+      });
+
+      document.addEventListener("pointermove", clearClosedMenus);
+    })();
+  </script>
+</body>
+</html>

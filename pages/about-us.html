@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | ChinaBusinessSetup</title>
+  <meta name="description" content="Learn how ChinaBusinessSetup supports foreign founders and overseas companies with China company registration, banking, tax, accounting, licenses, e-commerce entry and ongoing compliance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0c1f3f;
+      --deep: #092762;
+      --blue: #176fd1;
+      --sky: #3ab4e8;
+      --cyan: #19a7c8;
+      --mint: #0b9f8f;
+      --amber: #d9972a;
+      --paper: #ffffff;
+      --soft: #f4f8fc;
+      --mist: #e6eef7;
+      --line: #d8e2ee;
+      --muted: #53657d;
+      --shadow: 0 22px 60px rgba(9, 39, 98, .14);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      background: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .top-strip {
+      background: #071c39;
+      color: #d8e9ff;
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+    .top-strip .wrap {
+      max-width: 1460px;
+      margin: 0 auto;
+      min-height: 38px;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .top-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #fff;
+      font-weight: 600;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid rgba(216, 226, 238, .95);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 32px rgba(9, 39, 98, .06);
+    }
+    .nav-shell {
+      position: relative;
+      max-width: 1460px;
+      min-height: 88px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      width: clamp(250px, 22vw, 360px);
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      min-width: 230px;
+    }
+    .brand img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .menu-toggle {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .mobile-menu {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .mobile-menu svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+    }
+    .nav {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 2px;
+      min-height: 88px;
+      color: #17345f;
+      white-space: nowrap;
+      flex: 1 1 auto;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+    }
+    .nav-top {
+      min-height: 88px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0 13px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #23395e;
+    }
+    .nav-top:hover,
+    .nav-item:focus-within .nav-top,
+    .nav-item:hover .nav-top {
+      color: var(--blue);
+    }
+    .caret {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid currentColor;
+      margin-top: 3px;
+    }
+    .nav-item:hover .caret,
+    .nav-item:focus-within .caret {
+      transform: rotate(180deg);
+    }
+    .mega {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      top: 88px;
+      display: none;
+      grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(9, 39, 98, .14);
+      z-index: 20;
+    }
+    .nav-item:hover .mega,
+    .nav-item:focus-within .mega {
+      display: grid;
+    }
+    .nav-item.mega-click-closing .mega {
+      display: none !important;
+    }
+    .mega-col {
+      min-height: 300px;
+      padding: 32px 36px;
+      border-right: 1px solid #e8eef5;
+    }
+    .mega-col:last-child {
+      border-right: 0;
+    }
+    .mega-title {
+      margin: 0 0 18px;
+      color: #2b3d62;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+    .mega-rule {
+      height: 2px;
+      width: 100%;
+      background: #2f4f79;
+      margin: 0 0 20px;
+    }
+    .mega-links {
+      display: grid;
+      gap: 0;
+    }
+    .mega-links a {
+      display: block;
+      padding: 11px 6px;
+      border-radius: 6px;
+      color: #2b3d62;
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+    .mega-links a:hover {
+      color: var(--blue);
+      background: #f4f8fc;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+    .icon-link {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      background: #fff;
+    }
+    .icon-link svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+    }
+    .primary-link,
+    .secondary-link {
+      min-height: 44px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+    .primary-link {
+      background: #176fd1;
+      color: #fff;
+      box-shadow: 0 14px 26px rgba(23, 111, 209, .22);
+    }
+    .secondary-link {
+      background: #fff;
+      color: var(--blue);
+      border-color: rgba(23, 111, 209, .28);
+    }
+    .whatsapp-link {
+      min-height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      background: #18b760;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 14px 26px rgba(24, 183, 96, .22);
+    }
+    .whatsapp-link svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+    }
+    .whatsapp-link:hover,
+    .whatsapp-float:hover {
+      background: #128c4e;
+    }
+    .hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      background: #071c39;
+      color: #fff;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(7, 28, 57, .96) 0%, rgba(7, 28, 57, .84) 34%, rgba(7, 28, 57, .36) 62%, rgba(7, 28, 57, .10) 100%),
+        linear-gradient(0deg, rgba(7, 28, 57, .68), rgba(7, 28, 57, .04) 46%),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      transform: scale(1.01);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 110px 24px 150px;
+      display: grid;
+      grid-template-columns: minmax(0, 620px) minmax(300px, 1fr);
+      gap: 64px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .08);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #e7f4ff;
+      backdrop-filter: blur(12px);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #36d399;
+      box-shadow: 0 0 0 5px rgba(54, 211, 153, .12);
+    }
+    h1 {
+      margin: 24px 0 22px;
+      max-width: 650px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      color: #fff;
+    }
+    .hero-lead {
+      max-width: 590px;
+      margin: 0 0 34px;
+      color: #dbeaff;
+      font-size: 19px;
+      line-height: 1.72;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .hero-actions .primary-link,
+    .hero-actions .secondary-link {
+      min-height: 52px;
+      padding: 15px 22px;
+    }
+    .hero-actions .secondary-link {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .36);
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(12px);
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+    }
+    .trust-item {
+      min-height: 88px;
+      padding: 17px 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .18);
+      backdrop-filter: blur(12px);
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .trust-item span {
+      display: block;
+      font-size: 12px;
+      color: #d5e7fb;
+      line-height: 1.45;
+    }
+    .quick-panel {
+      justify-self: end;
+      width: min(100%, 380px);
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .94);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .72);
+    }
+    .quick-panel h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      color: var(--deep);
+    }
+    .quick-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .quick-list {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+    }
+    .quick-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #213b63;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+    .check {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin-top: 1px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(11, 159, 143, .12);
+      color: var(--mint);
+    }
+    .check svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      stroke-width: 3;
+    }
+    section {
+      padding: 78px 24px;
+    }
+    .section-soft { background: var(--soft); }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+    .section-kicker {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-heading h2,
+    .inner-hero h1,
+    .split-copy h2,
+    .lead-copy h2 {
+      letter-spacing: 0;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      color: var(--deep);
+    }
+    .section-heading p {
+      margin: 16px auto 0;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+    .section-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .service-card,
+    .entity-card,
+    .faq,
+    .page-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(9, 39, 98, .06);
+    }
+    .service-card {
+      padding: 28px;
+      min-height: 270px;
+    }
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: #eaf4ff;
+      color: var(--blue);
+    }
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    .service-card h3,
+    .entity-card h3,
+    .faq h3,
+    .page-card h3 {
+      margin: 0 0 12px;
+      color: var(--deep);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .service-card p,
+    .entity-card p,
+    .faq p,
+    .page-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .link-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      color: #24415f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .link-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .link-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+    .framework,
+    .city-content,
+    .insight-grid,
+    .lead-wrap,
+    .inner-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: stretch;
+    }
+    .framework-copy,
+    .split-copy {
+      padding: 38px;
+      border-radius: var(--radius);
+      background: #071c39;
+      color: #fff;
+      min-height: 100%;
+    }
+    .framework-copy h2,
+    .split-copy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.13;
+      color: #fff;
+    }
+    .framework-copy p,
+    .split-copy p {
+      margin: 0 0 26px;
+      color: #d6e6fa;
+      line-height: 1.75;
+    }
+    .entity-grid,
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .entity-card,
+    .page-card {
+      padding: 22px;
+    }
+    .city-band {
+      position: relative;
+      overflow: hidden;
+      background: #102b52;
+      color: #fff;
+    }
+    .city-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 43, 82, .96), rgba(16, 43, 82, .82), rgba(16, 43, 82, .96)),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      opacity: .32;
+    }
+    .city-content {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: center;
+    }
+    .city-content h2 {
+      margin: 0 0 16px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.14;
+      color: #fff;
+    }
+    .city-content p {
+      margin: 0;
+      color: #d6e6fa;
+      line-height: 1.75;
+    }
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .city {
+      min-height: 88px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .09);
+      backdrop-filter: blur(10px);
+    }
+    .city strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #fff;
+      font-size: 16px;
+    }
+    .city span {
+      color: #d9e8fa;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      min-height: 210px;
+      padding: 24px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--deep);
+      line-height: 1.28;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .metric-panel {
+      border-radius: var(--radius);
+      padding: 34px;
+      color: #fff;
+      background: linear-gradient(135deg, #176fd1, #0b9f8f);
+    }
+    .metric-panel h2 {
+      margin: 0 0 26px;
+      font-size: 31px;
+      line-height: 1.18;
+      color: #fff;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .metric {
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(255, 255, 255, .12);
+    }
+    .metric strong {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 4px;
+    }
+    .metric span {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #e8f5ff;
+    }
+    .faq-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .faq {
+      padding: 22px 24px;
+      box-shadow: none;
+    }
+    .lead-section {
+      background: #071c39;
+      color: #fff;
+      padding-bottom: 0;
+    }
+    .lead-wrap {
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: start;
+    }
+    .lead-copy {
+      padding: 16px 0 60px;
+    }
+    .lead-copy h2 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.11;
+    }
+    .lead-copy p {
+      margin: 0 0 28px;
+      color: #d9e8fa;
+      line-height: 1.75;
+    }
+    .contact-stack {
+      display: grid;
+      gap: 12px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .contact-item .service-icon {
+      width: 38px;
+      height: 38px;
+      margin: 0;
+      background: rgba(255, 255, 255, .1);
+      color: #62dcf1;
+    }
+    .lead-form {
+      margin-bottom: -64px;
+      padding: 28px;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .6);
+    }
+    .lead-form h3 {
+      margin: 0 0 16px;
+      color: var(--deep);
+      font-size: 24px;
+    }
+    .field-label {
+      color: var(--deep);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 4px 0 -4px;
+    }
+    .whatsapp-fields {
+      display: grid;
+      grid-template-columns: minmax(190px, .95fr) minmax(190px, 1.05fr);
+      gap: 13px;
+    }
+    .form-note {
+      margin: -4px 0 2px;
+      color: #66788d;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #cdd9e8;
+      border-radius: 6px;
+      padding: 13px 14px;
+      font: inherit;
+      color: #163154;
+      background: #fff;
+      outline: none;
+    }
+    textarea {
+      min-height: 104px;
+      resize: vertical;
+    }
+    .full { grid-column: 1 / -1; }
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .consent input {
+      min-height: auto;
+      width: auto;
+      margin-top: 3px;
+    }
+    .submit {
+      min-height: 52px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--blue);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .inner-hero {
+      position: relative;
+      overflow: hidden;
+      background: #071c39;
+      color: #fff;
+      padding: 88px 24px 92px;
+    }
+    .inner-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7, 28, 57, .97), rgba(7, 28, 57, .78), rgba(7, 28, 57, .48)),
+        url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center right;
+      opacity: .95;
+    }
+    .inner-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      margin-bottom: 18px;
+      color: #d5e7fb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumb a {
+      color: #fff;
+    }
+    .inner-hero h1 {
+      margin: 0 0 18px;
+      max-width: 760px;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.07;
+      color: #fff;
+    }
+    .inner-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: #dbeaff;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+    .page-list {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+    .page-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: #223a61;
+      background: #fff;
+      font-weight: 800;
+    }
+    .page-list a:hover {
+      color: var(--blue);
+      border-color: rgba(23, 111, 209, .34);
+    }
+    .footer {
+      padding: 112px 24px 34px;
+      background: #f6f9fd;
+      color: #40546e;
+    }
+    .footer-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 34px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 34px;
+    }
+    .footer-logo {
+      max-width: 320px;
+      margin-bottom: 18px;
+    }
+    .footer p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .footer h3 {
+      margin: 0 0 15px;
+      color: var(--deep);
+      font-size: 16px;
+    }
+    .footer a,
+    .footer span {
+      display: block;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #40546e;
+    }
+    .copyright {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #66788d;
+    }
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 120;
+      min-height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 18px;
+      background: #18b760;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .2);
+    }
+    .whatsapp-float svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
+
+    .about-hero-actions { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .about-photo-card {
+      position: relative;
+      min-height: 420px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, rgba(9,39,98,.9), rgba(23,111,209,.72)), url("../assets/shenzhen-spring-bamboo-hero.png");
+      background-size: cover;
+      background-position: center;
+    }
+    .about-photo-card .caption {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 24px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius);
+      background: rgba(7,28,57,.72);
+      color: #fff;
+      backdrop-filter: blur(12px);
+    }
+    .about-photo-card strong { display: block; margin-bottom: 6px; font-size: 18px; }
+    .about-photo-card span { color: #d9e8fa; font-size: 13px; line-height: 1.55; }
+    .choose-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .choose-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 12px 28px rgba(9,39,98,.06); }
+    .choose-card h3 { margin: 0 0 10px; color: var(--deep); font-size: 18px; }
+    .choose-card p { margin: 0; color: var(--muted); line-height: 1.7; font-size: 14px; }
+    .story-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+    .story-stat { padding: 22px; border-radius: var(--radius); background: #fff; border: 1px solid var(--line); }
+    .story-stat strong { display: block; color: var(--blue); font-size: 28px; margin-bottom: 6px; }
+    .story-stat span { color: var(--muted); font-size: 13px; line-height: 1.5; font-weight: 600; }
+    .audience-grid, .core-grid, .case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .audience-card, .core-card, .case-card, .team-card, .info-card { padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 12px 28px rgba(9,39,98,.06); }
+    .audience-card h3, .core-card h3, .case-card h3, .team-card h3, .info-card h3 { margin: 0 0 12px; color: var(--deep); font-size: 19px; }
+    .audience-card p, .core-card p, .case-card p, .team-card p, .info-card p { margin: 0 0 16px; color: var(--muted); line-height: 1.7; font-size: 14px; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .role-badge { display: inline-flex; margin-bottom: 14px; padding: 7px 10px; border-radius: 999px; background: #eaf4ff; color: var(--blue); font-size: 12px; font-weight: 800; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag-row span { padding: 7px 9px; border-radius: 999px; background: #f4f8fc; border: 1px solid var(--line); color: #24415f; font-size: 12px; font-weight: 700; }
+    .info-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 18px; align-items: stretch; }
+    .info-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .info-list li { padding-bottom: 12px; border-bottom: 1px solid #e8eef5; color: var(--muted); line-height: 1.6; }
+    .info-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .info-list strong { color: var(--deep); }
+    @media (max-width: 1080px) { .choose-grid, .audience-grid, .core-grid, .case-grid, .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 920px) { .info-grid { grid-template-columns: 1fr; } .about-photo-card { min-height: 340px; } }
+    @media (max-width: 640px) { .choose-grid, .audience-grid, .core-grid, .case-grid, .team-grid, .story-strip { grid-template-columns: 1fr; } }
+
+    @media (max-width: 1280px) {
+      .brand { width: clamp(230px, 20vw, 310px); }
+      .nav-top { padding: 0 9px; font-size: 14px; }
+      .header-actions .secondary-link { display: none; }
+    }
+    @media (max-width: 1080px) {
+      .nav-shell {
+        min-height: 78px;
+      }
+      .brand {
+        width: min(62vw, 320px);
+      }
+      .mobile-menu {
+        display: inline-flex;
+      }
+      .header-actions .icon-link,
+      .header-actions .secondary-link {
+        display: none;
+      }
+      .nav {
+        display: none;
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 78px;
+        min-height: auto;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        white-space: normal;
+      }
+      .menu-toggle:checked ~ .nav {
+        display: flex;
+      }
+      .nav-item {
+        display: block;
+        border-bottom: 1px solid #edf2f7;
+      }
+      .nav-item:last-child {
+        border-bottom: 0;
+      }
+      .nav-top {
+        width: 100%;
+        min-height: 46px;
+        justify-content: space-between;
+        padding: 12px;
+      }
+      .mega {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 0;
+        box-shadow: none;
+        background: #f8fbff;
+      }
+      .mega-col {
+        min-height: auto;
+        padding: 18px 14px;
+        border-right: 0;
+        border-top: 1px solid #e8eef5;
+      }
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 920px) {
+      .top-strip .wrap { justify-content: center; }
+      .hero { min-height: auto; }
+      .hero-media {
+        background-image:
+          linear-gradient(180deg, rgba(7, 28, 57, .92) 0%, rgba(7, 28, 57, .82) 46%, rgba(7, 28, 57, .58) 100%),
+          url("../assets/shenzhen-spring-bamboo-hero.png");
+        background-position: center;
+      }
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: 84px 24px 72px;
+      }
+      .quick-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+      .service-grid,
+      .framework,
+      .city-content,
+      .insight-grid,
+      .lead-wrap,
+      .footer-grid,
+      .inner-grid {
+        grid-template-columns: 1fr;
+      }
+      .city-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .lead-form {
+        margin-bottom: -46px;
+      }
+    }
+    @media (max-width: 640px) {
+      .top-links { display: none; }
+      .nav-shell {
+        min-height: 74px;
+        padding: 0 16px;
+      }
+      .brand { width: min(70vw, 280px); min-width: 0; }
+      .header-actions .primary-link { display: none; }
+      .whatsapp-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+      }
+      .whatsapp-link span { display: none; }
+      .nav { top: 74px; }
+      .hero-content,
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+      .hero-content { padding-top: 64px; }
+      .trust-row,
+      .entity-grid,
+      .city-grid,
+      .process,
+      .metrics,
+      .page-grid,
+      form {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions .primary-link,
+      .hero-actions .secondary-link {
+        width: 100%;
+      }
+      .whatsapp-fields {
+        grid-template-columns: 1fr;
+      }
+      .quick-panel,
+      .service-card,
+      .framework-copy,
+      .split-copy,
+      .metric-panel,
+      .lead-form {
+        padding: 22px;
+      }
+      .footer { padding-top: 94px; }
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        justify-content: center;
+        font-size: 0;
+      }
+      .whatsapp-float svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
+
+
+<style>
+.about-story-reordered{background:#f4f8fc;padding:70px 24px}
+.about-story-inner{max-width:1180px;margin:0 auto;display:block}
+.about-dark-panel{background:#08234a;color:#fff;border-radius:18px;padding:64px;box-shadow:0 18px 40px rgba(8,35,74,.16);max-width:1100px;margin:0 auto}
+.about-dark-panel .section-kicker{color:#2488e8;letter-spacing:.16em;text-transform:uppercase;font-weight:900;margin-bottom:18px}
+.about-dark-panel h2{font-size:52px;line-height:1.08;margin:0 0 28px;color:#fff;max-width:850px}
+.about-dark-panel p{font-size:19px;line-height:1.85;color:#d7e6f8;margin:0 0 24px;max-width:980px}
+.about-story-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.about-story-card{background:#fff;border:1px solid #dbe6f2;border-radius:12px;padding:24px;min-height:170px}
+.about-story-card h3{font-size:24px;color:#176fd1;margin:0 0 10px;line-height:1.15}
+.about-story-card p{color:#53657d;font-weight:700;line-height:1.5;margin:0}
+.about-choose{background:#fff;padding:78px 24px}
+.about-choose-inner{max-width:1320px;margin:0 auto}
+.about-choose-heading{text-align:center;max-width:900px;margin:0 auto 46px}
+.about-choose-heading .section-kicker{color:#176fd1;letter-spacing:.16em;text-transform:uppercase;font-weight:900;margin-bottom:14px}
+.about-choose-heading h2{font-size:54px;color:#08234a;margin:0 0 22px;line-height:1.1}
+.about-choose-heading p{font-size:18px;line-height:1.7;color:#53657d;margin:0}
+.about-choose-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.about-choose-card{background:#fff;border:1px solid #dbe6f2;border-radius:12px;padding:30px;box-shadow:0 10px 24px rgba(12,31,63,.05)}
+.about-choose-card h3{font-size:24px;color:#08234a;margin:0 0 18px}
+.about-choose-card p{font-size:17px;line-height:1.65;color:#53657d;margin:0}
+.about-pro-section{max-width:1200px;margin:50px auto;padding:0 24px}
+.about-pro-title{text-align:center;font-size:40px;color:#08234a;margin:0 0 16px}
+.about-pro-sub{text-align:center;color:#53657d;font-size:18px;line-height:1.7;max-width:820px;margin:0 auto 36px}
+.about-pro-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.about-pro-card{background:#fff;border:1px solid #dbe6f2;border-radius:16px;padding:30px;box-shadow:0 12px 30px rgba(12,31,63,.06)}
+.about-pro-card h3{color:#08234a;font-size:22px;margin:0 0 12px}
+.about-pro-card p{color:#53657d;font-size:16px;line-height:1.7;margin:0}
+.about-stats{background:#08234a;border-radius:18px;padding:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.about-stat strong{display:block;color:#fff;font-size:38px;margin-bottom:8px}
+.about-stat span{color:#d7e6f8;font-weight:700}
+.about-process{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.about-process-card{background:#f4f8fc;border:1px solid #dbe6f2;border-radius:14px;padding:26px}
+.about-process-card:before{counter-increment:step;content:"0" counter(step);display:inline-block;color:#1677d2;font-weight:900;margin-bottom:14px;letter-spacing:.12em}
+.about-process-card h3{margin:0 0 10px;color:#08234a}
+.about-process-card p{margin:0;color:#53657d;line-height:1.65}
+.about-cta{max-width:1200px;margin:60px auto 80px;padding:0 24px}
+.about-cta-inner{background:#08234a;color:#fff;border-radius:18px;padding:46px;text-align:center}
+.about-cta-inner h2{font-size:36px;margin:0 0 14px;color:#fff}
+.about-cta-inner p{color:#d7e6f8;font-size:18px;line-height:1.7;max-width:780px;margin:0 auto 24px}
+.about-cta-inner a{display:inline-block;background:#19b763;color:#fff;border-radius:999px;padding:15px 28px;font-weight:900;text-decoration:none}
+@media(max-width:1000px){.about-story-inner,.about-story-cards,.about-choose-grid,.about-pro-grid,.about-stats,.about-process{grid-template-columns:1fr}.about-dark-panel h2,.about-choose-heading h2{font-size:36px}}
+</style>
+
+</head>
+<body>
+
+  <div class="top-strip">
+    <div class="wrap">
+      <span>China company setup, tax, banking and compliance support for foreign founders.</span>
+      <div class="top-links">
+        <a href="mailto:info@chinabusinesssetup.com">info@chinabusinesssetup.com</a>
+        <a href="../pages/contact.html">Free Setup Assessment</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html" aria-label="ChinaBusinessSetup home">
+        <img src="../assets/chinabusinesssetup-logo.png" alt="China Business Setup - Your Trusted Partner for Business Expansion in China">
+      </a>
+      <input class="menu-toggle" type="checkbox" id="menu-toggle">
+      <label class="mobile-menu" for="menu-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </label>
+      <nav class="nav" aria-label="Primary navigation">
+        
+                <div class="nav-item">
+          <a class="nav-top" href="../index.html">Home</a>
+        </div>
+<div class="nav-item">
+          <a class="nav-top" href="../pages/company-registration.html">Company Registration <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+            
+          <div class="mega-col">
+            <h3 class="mega-title">China Company Registration</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/limited-liability-company.html">Limited Liability Company</a>
+              <a href="../pages/representative-office.html">Representative Office</a>
+              <a href="../pages/joint-stock-limited-company.html">Joint-Stock Limited Company</a>
+              <a href="../pages/branch-of-foreign-company.html">Branch of Foreign Company</a>
+              <a href="../pages/general-partnership.html">General Partnership</a>
+              <a href="../pages/limited-partnership.html">Limited Partnership</a>
+              <a href="../pages/special-general-partnership.html">Special General Partnership</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Hong Kong Company Registration</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/hong-kong-llc.html">Limited Liability Company (LLC)</a>
+              <a href="../pages/sole-proprietorship.html">Sole Proprietorship</a>
+              <a href="../pages/hong-kong-branch-office.html">Branch Office</a>
+              <a href="../pages/hong-kong-representative-office.html">Representative Office</a>
+              <a href="../pages/hong-kong-partnership.html">Partnership</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Registration Changes</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/change-registered-capital.html">Change Registered Capital</a>
+              <a href="../pages/change-shareholders.html">Change Shareholders</a>
+              <a href="../pages/change-registered-address.html">Change Registered Address</a>
+              <a href="../pages/change-legal-representative.html">Change Legal Representative</a>
+              <a href="../pages/change-business-scope.html">Change Business Scope</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/affiliated-services.html">Affiliated Services <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+            
+          <div class="mega-col">
+            <h3 class="mega-title">Tax Services</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/tax-accounting.html">Tax &amp; Accounting</a>
+              <a href="../pages/corporate-tax-return.html">Corporate Tax Return</a>
+              <a href="../pages/vat-filing.html">VAT Filing</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">One-off Services</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/company-closure.html">Company Closure</a>
+              <a href="../pages/trademark-registration.html">Trademark Registration</a>
+              <a href="../pages/import-license.html">Import License</a>
+              <a href="../pages/export-license.html">Export License</a>
+              <a href="../pages/icp-license.html">ICP License</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">E-commerce</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/sell-online-in-china.html">Sell online in China</a>
+              <a href="../pages/tmall.html">Tmall</a>
+              <a href="../pages/jd-store.html">JD Store</a>
+              <a href="../pages/xiaohongshu-shop.html">XiaoHongShu Shop</a>
+              <a href="../pages/douyin-store.html">Douyin Store</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/guides.html">Guides <span class="caret"></span></a>
+          <div class="mega" style="--cols:3">
+          <div class="mega-col">
+            <h3 class="mega-title">Enter China</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#enter-china">Market Entry</a>
+              <a href="../pages/china-market-entry-guide.html">China Market Entry Guide</a>
+              <a href="../pages/wfoe-registration-guide.html">WFOE Registration Guide</a>
+              <a href="../pages/company-registration.html">Company Registration</a>
+              <a href="../pages/hong-kong.html">Hong Kong Company</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Operate in China</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#operate-china">Tax & Accounting</a>
+              <a href="../pages/tax-accounting.html">Accounting Support</a>
+              <a href="../pages/vat-filing.html">VAT Filing</a>
+              <a href="../pages/corporate-tax-return.html">Corporate Tax Return</a>
+              <a href="../pages/import-license.html">Import License</a>
+              <a href="../pages/export-license.html">Export License</a>
+              <a href="../pages/trademark-registration.html">Trademark Registration</a>
+            </div>
+          </div>
+          <div class="mega-col">
+            <h3 class="mega-title">Exit or Restructure</h3>
+            <div class="mega-rule"></div>
+            <div class="mega-links">
+              <a href="../pages/guides.html#exit-restructure">Change or Close Company</a>
+              <a href="../pages/company-closure.html">Company Closure</a>
+              <a href="../pages/change-business-scope.html">Change Business Scope</a>
+              <a href="../pages/change-registered-capital.html">Change Registered Capital</a>
+              <a href="../pages/change-shareholders.html">Change Shareholders</a>
+              <a href="../pages/change-registered-address.html">Change Registered Address</a>
+              <a href="../pages/change-legal-representative.html">Change Legal Representative</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/about-us.html">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/reviews.html">Reviews</a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-top" href="../pages/contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="mailto:info@chinabusinesssetup.com" aria-label="Email China Business Setup">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        </a>
+        <a class="whatsapp-link" href="https://wa.me/8615118019493" target="_blank" rel="noopener" aria-label="Chat with China Business Setup on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/><path d="M8.8 9.2c.2 3.1 2.9 5.8 6 6"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+
+<section class="about-story-reordered">
+  <div class="about-story-inner">
+    <div class="about-dark-panel">
+      <div class="section-kicker">Who We Are</div>
+      <h2>A practical China setup partner for foreign founders</h2>
+      <p>China Business Setup is a China-based business support team specializing in company registration, WFOE formation, business licensing, bank account coordination, tax registration, and ongoing corporate compliance services for foreign-invested businesses in China. With local expertise and on-the-ground experience, we help international clients navigate China's regulatory and administrative requirements efficiently and compliantly.</p>
+      <p>We help foreign founders, overseas SMEs, international brands, e-commerce businesses, and multinational companies establish and operate compliant business entities in China without navigating complex local procedures alone.</p>
+      <p>We also support overseas companies with corporate governance documentation, regulatory filings, accounting and tax coordination, employment compliance, business expansion planning, and post-incorporation compliance management.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-pro-section">
+  <h2 class="about-pro-title">What We Support</h2>
+  <p class="about-pro-sub">We help overseas clients move from market-entry planning to compliant China operations with a practical, step-by-step service route.</p>
+  <div class="about-pro-grid">
+    <div class="about-pro-card"><h3>Setup & Registration</h3><p>Company registration, WFOE formation, representative office setup, company changes and document preparation.</p></div>
+    <div class="about-pro-card"><h3>Banking & Tax</h3><p>Bank account coordination, tax registration, VAT filing, bookkeeping, payroll and annual compliance support.</p></div>
+    <div class="about-pro-card"><h3>Licensing & Growth</h3><p>Import-export licenses, ICP support, trademark registration and China e-commerce platform entry planning.</p></div>
+  </div>
+</section>
+
+
+<section class="about-choose">
+  <div class="about-choose-inner">
+    <div class="about-choose-heading">
+      <div class="section-kicker">WHY CLIENTS CHOOSE US</div>
+      <h2>Practical support for foreign founders in China</h2>
+      <p>Starting a company in China involves more than registration. We help overseas founders prepare documents, plan compliance, open bank accounts, manage tax registration and stay compliant after launch.</p>
+    </div>
+    <div class="about-choose-grid">
+      <article class="about-choose-card">
+        <h3>Document Preparation</h3>
+        <p>Shareholder documents, passports, notarization and legalization guidance.</p>
+      </article>
+      <article class="about-choose-card">
+        <h3>Compliance & Structure Planning</h3>
+        <p>Business scope, licenses, tax setup and banking considerations before filing.</p>
+      </article>
+      <article class="about-choose-card">
+        <h3>English Project Coordination</h3>
+        <p>Clear communication with overseas founders and international teams.</p>
+      </article>
+      <article class="about-choose-card">
+        <h3>Ongoing Compliance Support</h3>
+        <p>Accounting, tax filing, annual reporting, company changes and expansion support.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="about-pro-section">
+  <h2 class="about-pro-title">Industries We Support</h2>
+  <p class="about-pro-sub">
+    Our clients include trading companies, consulting firms, e-commerce sellers, technology teams, service providers, manufacturers and overseas brands.
+  </p>
+  <div class="about-pro-grid">
+    <div class="about-pro-card"><h3>Trading & Import-Export</h3><p>Company setup, import-export rights, customs registration, tax filing and bank coordination.</p></div>
+    <div class="about-pro-card"><h3>E-commerce Brands</h3><p>Tmall, JD, Xiaohongshu, Douyin, ICP assessment, store setup planning and compliance route design.</p></div>
+    <div class="about-pro-card"><h3>Service & Consulting Firms</h3><p>WFOE registration, invoicing readiness, payroll setup, accounting support and annual compliance.</p></div>
+  </div>
+</section>
+
+<section class="about-pro-section">
+  <div class="about-stats">
+    <div class="about-stat"><strong>30+</strong><span>Countries Served</span></div>
+    <div class="about-stat"><strong>10+</strong><span>Business Categories</span></div>
+    <div class="about-stat"><strong>1-stop</strong><span>Setup & Compliance</span></div>
+    <div class="about-stat"><strong>EN/CN</strong><span>Bilingual Support</span></div>
+  </div>
+</section>
+
+<section class="about-pro-section">
+  <h2 class="about-pro-title">How We Work</h2>
+  <div class="about-process">
+    <div class="about-process-card"><h3>Review</h3><p>We review your business model, shareholder structure, target city and expected operations.</p></div>
+    <div class="about-process-card"><h3>Plan</h3><p>We recommend the suitable entity route, scope, capital plan, license needs and document checklist.</p></div>
+    <div class="about-process-card"><h3>File</h3><p>We coordinate registration, bank preparation, tax activation and required regulatory filings.</p></div>
+    <div class="about-process-card"><h3>Support</h3><p>We continue with accounting, tax, annual reporting, changes, licensing and compliance management.</p></div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="about-cta-inner">
+    <h2>Planning to set up or operate a company in China?</h2>
+    <p>Send us your business model, target city and expected activities. We will help you understand the practical setup route and compliance steps.</p>
+    <a href="contact.html">Request Free Setup Assessment</a>
+  </div>
+</section>
+
+
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Who We Help</div>
+          <h2>Business setup support for different China entry goals</h2>
+          <p>Our clients usually need China-side structure, documentation and compliance support for trading, services, manufacturing coordination, online sales or local hiring.</p>
+          <div class="section-actions"><a class="primary-link" href="../pages/contact.html">Check My Case</a></div>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card"><h3>Foreign founders</h3><p>Entrepreneurs planning a WFOE, consulting company, trading company, technology service entity or representative office.</p><ul class="link-list"><li>Company type comparison</li><li>Registered capital planning</li><li>Business scope review</li></ul></article>
+          <article class="audience-card"><h3>Overseas SMEs</h3><p>Established companies that need a China presence for sales, sourcing, hiring, invoicing, contracts or supplier management.</p><ul class="link-list"><li>Shareholder document preparation</li><li>Mainland and Hong Kong options</li><li>Bank and tax readiness</li></ul></article>
+          <article class="audience-card"><h3>Trading and sourcing teams</h3><p>Import-export companies that need customs registration, trading scope, fapiao capability and operational compliance.</p><ul class="link-list"><li>Import-export rights</li><li>Customs and license coordination</li><li>VAT and invoice workflow</li></ul></article>
+          <article class="audience-card"><h3>E-commerce brands</h3><p>Consumer brands comparing Tmall, JD, Xiaohongshu, Douyin, local entity routes and cross-border e-commerce options.</p><ul class="link-list"><li>Platform route planning</li><li>Trademark timing</li><li>Store setup support</li></ul></article>
+          <article class="audience-card"><h3>Existing China companies</h3><p>Companies that need changes after registration, such as legal representative, shareholder, address, capital or business scope updates.</p><ul class="link-list"><li>Change filing</li><li>Tax and bank impact review</li><li>Document checklist</li></ul></article>
+          <article class="audience-card"><h3>Companies exiting China</h3><p>Dormant or restructuring companies that need closure planning, tax clearance, liquidation coordination and license cancellation.</p><ul class="link-list"><li>Company closure</li><li>Tax clearance</li><li>Bank account closure</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Our Core Services</div>
+          <h2>China business support where accuracy and usability matter</h2>
+          <p>We focus on the setup and compliance steps that affect whether a foreign company can actually operate after registration.</p>
+        </div>
+        <div class="core-grid">
+          <article class="core-card"><h3><a href="../pages/company-registration.html">Company registration</a></h3><p>WFOE, LLC, representative office, branch, partnership and Hong Kong company planning for foreign investors.</p></article>
+          <article class="core-card"><h3><a href="../pages/bank-account-opening.html">Bank account preparation</a></h3><p>Document checklist, appointment preparation and practical guidance for company bank account opening.</p></article>
+          <article class="core-card"><h3><a href="../pages/tax-accounting.html">Tax and accounting</a></h3><p>Bookkeeping, VAT filing, corporate tax return, annual compliance and financial record support.</p></article>
+          <article class="core-card"><h3><a href="../pages/trademark-registration.html">Trademark and licenses</a></h3><p>Trademark registration, ICP, import license, export license and operational qualification coordination.</p></article>
+          <article class="core-card"><h3><a href="../pages/sell-online-in-china.html">E-commerce market entry</a></h3><p>Support for Tmall, JD, Xiaohongshu, Douyin and online selling routes in China.</p></article>
+          <article class="core-card"><h3><a href="../pages/company-closure.html">Changes and closure</a></h3><p>Legal representative, shareholder, address, capital, scope changes and company deregistration support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Examples of Cases We Support</div>
+          <h2>Every case is reviewed based on purpose, structure and operating risk</h2>
+          <p>Below are common scenarios where our team can help prepare the right route and documentation.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card"><h3>China WFOE setup</h3><p>A foreign founder needs a service or trading company in China with business scope, address, capital and banking steps planned before filing.</p></article>
+          <article class="case-card"><h3>Import-export trading company</h3><p>An overseas SME wants a China entity that can source locally, issue fapiao, handle customs registration and support export activity.</p></article>
+          <article class="case-card"><h3>China e-commerce launch</h3><p>A brand wants to compare Tmall, JD, Xiaohongshu and Douyin routes, including entity, trademark, tax and store requirements.</p></article>
+          <article class="case-card"><h3>Post-registration compliance</h3><p>A newly registered company needs bookkeeping, VAT filing, payroll accounting, annual reporting and a compliance calendar.</p></article>
+          <article class="case-card"><h3>Complex shareholder structure</h3><p>A company has overseas corporate shareholders, nominee directors, legalized documents or multi-country signing requirements.</p></article>
+          <article class="case-card"><h3>Company restructuring or closure</h3><p>An existing China entity needs tax clearance, shareholder changes, address updates, business scope adjustment or full deregistration.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">How We Work</div>
+          <h2>Structured steps from first review to operation</h2>
+          <p>We use a staged process so clients understand the route before spending time preparing documents or arranging filings.</p>
+        </div>
+        <div class="process">
+          <article class="step"><h3>1. Case review</h3><p>We review your business model, shareholder structure, target city, products or services and expected operating timeline.</p></article>
+          <article class="step"><h3>2. Route planning</h3><p>We compare entity type, business scope, registered address, capital plan, license needs and tax consequences.</p></article>
+          <article class="step"><h3>3. Document checklist</h3><p>We confirm what shareholders, directors and local contacts need to prepare before registration or changes.</p></article>
+          <article class="step"><h3>4. China-side coordination</h3><p>We coordinate registration, license, bank, tax, accounting or platform setup steps with practical progress updates.</p></article>
+          <article class="step"><h3>5. Final review</h3><p>We check key details such as company name, scope, address, tax category, document consistency and next obligations.</p></article>
+          <article class="step"><h3>6. Ongoing support</h3><p>We help with tax filings, accounting, annual reporting, changes, licenses and follow-up compliance as the company grows.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Our Team</div>
+          <h2>Specialists for setup, compliance and client coordination</h2>
+          <p>Our work combines English-language client communication with China-side document preparation and local process coordination.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card"><span class="role-badge">China Business Setup</span><h3>Market Entry Consultant</h3><p>Supports founders with WFOE setup planning, city comparison, business scope review, registered capital planning and registration route explanation.</p><div class="tag-row"><span>WFOE</span><span>Business scope</span><span>Market entry</span></div></article>
+          <article class="team-card"><span class="role-badge">Tax & Compliance</span><h3>Accounting Coordinator</h3><p>Helps clients understand bookkeeping, VAT, corporate tax return, fapiao readiness, payroll accounting and annual compliance obligations.</p><div class="tag-row"><span>VAT</span><span>Bookkeeping</span><span>Annual filing</span></div></article>
+          <article class="team-card"><span class="role-badge">Licensing & E-commerce</span><h3>Operations Specialist</h3><p>Coordinates trademark, ICP, import-export license and China e-commerce platform preparation for brands entering online sales channels.</p><div class="tag-row"><span>Trademark</span><span>ICP</span><span>E-commerce</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container info-grid">
+        <div class="split-copy">
+          <div class="section-kicker">Company Information</div>
+          <h2>Clear information before you start</h2>
+          <p>We encourage clients to confirm the service route, document requirements, timeline and compliance responsibilities before moving forward.</p>
+          <a class="primary-link" href="../pages/contact.html">Contact Us</a>
+        </div>
+        <div class="info-card">
+          <h3>China Business Setup</h3>
+          <ul class="info-list">
+            <li><strong>Website:</strong> chinabusinesssetup.com</li>
+            <li><strong>Email:</strong> info@chinabusinesssetup.com</li>
+            <li><strong>WhatsApp:</strong> +86 151 1801 9493</li>
+            <li><strong>Service languages:</strong> English and Chinese</li>
+            <li><strong>Business focus:</strong> China company registration, WFOE setup, bank account preparation, tax and accounting, VAT filing, corporate tax return, trademark, licenses, e-commerce entry, company changes and company closure.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/chinabusinesssetup-logo.png" alt="China Business Setup">
+        <p>Your trusted partner for business expansion in China, with practical support from company registration through tax, banking and ongoing compliance.</p>
+      </div>
+      <div>
+        <h3>Company Setup</h3>
+        <a href="../pages/limited-liability-company.html">WFOE / LLC Registration</a>
+        <a href="../pages/representative-office.html">Representative Office</a>
+        <a href="../pages/hong-kong-llc.html">Hong Kong Company</a>
+        <a href="../pages/change-business-scope.html">Registration Changes</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="../pages/bank-account-opening.html">Bank Account Opening</a>
+        <a href="../pages/tax-accounting.html">Tax & Accounting</a>
+        <a href="../pages/trademark-registration.html">Trademark Registration</a>
+        <a href="../pages/sell-online-in-china.html">E-commerce Entry</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <span>Tengfei Industrial Building, No. 6 Taohua Road<br>Fubao Community, Fubao Street<br>Futian District, Shenzhen, China</span>
+        <a href="tel:+8615118019493">WeChat +86 15118019493</a>
+        <a href="https://wa.me/8615118019493" target="_blank" rel="noopener">WhatsApp +86 15118019493 (WhatsApp Business)</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 ChinaBusinessSetup. All rights reserved.</span>
+      <span>Company registration, compliance and market entry support for foreign businesses.</span>
+    </div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/8615118019493" target="_blank" rel="noopener" aria-label="Chat with China Business Setup on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/><path d="M8.8 9.2c.2 3.1 2.9 5.8 6 6"/></svg>
+    WhatsApp
+  </a>
+  <script>
+    (function () {
+      var closingClass = "mega-click-closing";
+
+      function clearClosedMenus(event) {
+        document.querySelectorAll(".nav-item." + closingClass).forEach(function (item) {
+          if (!item.contains(event.target)) item.classList.remove(closingClass);
+        });
+      }
+
+      document.querySelectorAll(".nav-item").forEach(function (item) {
+        item.addEventListener("mouseleave", function () {
+          item.classList.remove(closingClass);
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest(".mega a");
+        if (!link) return;
+
+        var item = link.closest(".nav-item");
+        if (item) item.classList.add(closingClass);
+
+        if (document.activeElement && typeof document.activeElement.blur === "function") {
+          document.activeElement.blur();
+        }
+      });
+
+      document.addEventListener("pointermove", clearClosedMenus);
+    })();
+  </script>
+</body>
+</html>
